@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carriage Hill Estates HOA - Pool Rules & Safety</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --primary-light: #f0f7f9;
+            --secondary: #57c5b6;
+            --dark: #222831;
+            --light: #ffffff;
+            --accent: #e07a5f;
+            --gray: #6c757d;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--light);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .header-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header-container p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary);
+            display: inline-block;
+        }
+
+        /* Hours Grid */
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .hours-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary);
+            transition: transform 0.2s ease;
+        }
+
+        .hours-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .hours-card.maintenance {
+            border-top-color: var(--accent);
+        }
+
+        .hours-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .hours-card .time {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: var(--primary-light);
+            padding: 0.2rem 0.75rem;
+            border-radius: 20px;
+        }
+
+        .hours-card.maintenance .time {
+            color: var(--accent);
+            background: #fff5f2;
+        }
+
+        .hours-card ul {
+            list-style-type: none;
+        }
+
+        .hours-card li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .hours-card li::before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .hours-card.maintenance li::before {
+            color: var(--accent);
+        }
+
+        /* Rules Grid */
+        .rules-container {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .rules-category h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #eef2f3;
+            padding-bottom: 0.5rem;
+        }
+
+        .rules-list {
+            list-style: none;
+        }
+
+        .rules-list li {
+            padding: 0.6rem 0 0.6rem 1.75rem;
+            position: relative;
+            border-bottom: 1px solid #f8f9fa;
+            font-size: 0.95rem;
+        }
+
+        .rules-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Custom Bullet Points for Rules based on severity */
+        .rules-list li::before {
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .safety li::before { content: "✕"; color: var(--accent); }
+        .etiquette li::before { content: "✓"; color: var(--secondary); }
+        .facilities li::before { content: "⚿"; color: var(--primary); }
+
+        /* Highlight box for critical rules */
+        .critical-note {
+            background-color: #fff5f2;
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            font-size: 0.9rem;
+            color: #843a24;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 5rem;
+            background-color: var(--dark);
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header { padding: 3rem 1rem 2rem; }
+            .header-container h1 { font-size: 2rem; }
+            main { margin: 1.5rem auto; }
+            .rules-container { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>Carriage Hill Estates HOA</h1>
+            <p>Private Community Pool Guidelines & Safety Regulations</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Schedule Section -->
+        <h2 class="section-title">Pool Schedule & Access</h2>
+        <div class="hours-grid">
+            
+            <!-- Early Access -->
+            <div class="hours-card">
+                <h3>Early-Access Hours</h3>
+                <span class="time">6:30 AM – 8:00 AM</span>
+                <ul>
+                    <li>Open exclusively to registered CHE/HOA members <strong>over the age of 18</strong>.</li>
+                    <li>Strictly reserved for lap swimming, water aerobics, and structured exercise.</li>
+                    <li><strong>No guests</strong> are permitted during this window to ensure uninterrupted workouts.</li>
+                </ul>
+            </div>
+
+            <!-- Maintenance -->
+            <div class="hours-card maintenance">
+                <h3>Maintenance Window</h3>
+                <span class="time">8:00 AM – 10:00 AM</span>
+                <ul>
+                    <li><strong>Pool is closed</strong> to all members and guests.</li>
+                    <li>Required maintenance activities and safety inspections are performed during this time.</li>
+                    <li>Our pool contractor may perform servicing at any point during this window.</li>
+                </ul>
+            </div>
+
+            <!-- Normal Hours -->
+            <div class="hours-card">
+                <h3>Normal Operating Hours</h3>
+                <span class="time">10:00 AM – 9:00 PM</span>
+                <ul>
+                    <li>Open to all CHE/HOA members and their accompanied guests.</li>
+                    <li>Maximum of <strong>6 guests per household</strong>; guests must be accompanied by at least one member.</li>
+                    <li>Children and teens <strong>under the age of 16 must be supervised</strong> by a member over the age of 18.</li>
+                    <li>Pool party table reservations are available, though the pool remains shared and accessible to all members.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Rules Section -->
+        <h2 class="section-title">Pool Rules & Guidelines</h2>
+        <div class="rules-container">
+            
+            <div class="critical-note">
+                <strong>Safety First:</strong> The Carriage Hill Estates pool is a private community amenity. Please review the safety and facility rules below to ensure a fun, safe, and clean environment for all families.
+            </div>
+
+            <div class="rules-grid">
+                
+                <!-- Safety Rules -->
+                <div class="rules-category">
+                    <h4>Safety & Prohibitions</h4>
+                    <ul class="rules-list safety">
+                        <li><strong>Absolutely No Glass</strong> permitted in or around the pool area.</li>
+                        <li><strong>No Diving</strong> allowed at any time.</li>
+                        <li><strong>No Running</strong> on the pool deck or surrounding areas.</li>
+                        <li><strong>No Smoking or Vaping</strong> anywhere within the pool facility.</li>
+                        <li><strong>Keep off the safety rope</strong>.</li>
+                        <li><strong>No Pets</strong> allowed inside the pool gates.</li>
+                    </ul>
+                </div>
+
+                <!-- Environment & Conduct -->
+                <div class="rules-category">
+                    <h4>Conduct & Environment</h4>
+                    <ul class="rules-list etiquette">
+                        <li><strong>No Unnecessary Roughness</strong> or unsafe play.</li>
+                        <li><strong>No Abusive or Foul Language</strong>; keep it family-friendly.</li>
+                        <li><strong>No Alcoholic Beverages</strong> permitted on the premises.</li>
+                        <li><strong>No External Music</strong> (please use personal headphones).</li>
+                        <li><strong>Don’t sit on the steps</strong> to keep entryways clear for others.</li>
+                        <li>Large inflatables and <strong>large floats are not permitted</strong>.</li>
+                    </ul>
+                </div>
+
+                <!-- Attire & Facility Care -->
+                <div class="rules-category">
+                    <h4>Dress Code & Facility Care</h4>
+                    <ul class="rules-list facilities">
+                        <li><strong>Appropriate Swimwear Required:</strong> Family-friendly attire only. No thong or cheeky bottoms permitted.</li>
+                        <li><strong>Keep Food and Drink 10 feet away</strong> from the pool edge.</li>
+                        <li><strong>Pick Up Your Trash</strong> and help keep our community beautiful.</li>
+                        <li><strong>Clean Up Your Area</strong> before leaving.</li>
+                        <li><strong>Put Chairs Back</strong> in their proper place before you leave.</li>
+                        <li><strong>Put Umbrellas Down</strong> after use to protect them from wind damage.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Carriage Hill Estates Homeowners Association. All Rights Reserved.</p>
+        <p>Thank you for doing your part to keep our neighborhood pool safe, clean, and enjoyable!</p>
+    </footer>
+
+</body>
+</html>
