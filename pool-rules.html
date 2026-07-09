@@ -12,6 +12,8 @@
             --dark: #222831;
             --light: #ffffff;
             --accent: #e07a5f;
+            --danger: #d9383a;
+            --danger-light: #fff5f5;
             --gray: #6c757d;
             --border-radius: 12px;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -77,6 +79,57 @@
             padding-bottom: 0.5rem;
             border-bottom: 3px solid var(--secondary);
             display: inline-block;
+        }
+
+        /* Critical Closing Information Alert Box */
+        .closing-alert {
+            background-color: var(--danger-light);
+            border: 2px solid var(--danger);
+            border-left: 8px solid var(--danger);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .closing-alert h2 {
+            color: var(--danger);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .closing-alert p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .closing-alert p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .closing-alert strong {
+            color: #9b1c1c;
+        }
+
+        .emergency-call {
+            background: var(--light);
+            border: 1px solid #f8b4b4;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            font-weight: bold;
+            display: inline-block;
+            color: var(--dark);
+        }
+
+        .emergency-call span {
+            color: var(--danger);
+            font-size: 1.2rem;
         }
 
         /* Hours Grid */
@@ -190,7 +243,7 @@
             border-bottom: none;
         }
 
-        /* Custom Bullet Points for Rules based on severity */
+        /* Custom Bullet Points for Rules */
         .rules-list li::before {
             position: absolute;
             left: 0;
@@ -244,6 +297,17 @@
     </header>
 
     <main>
+        
+        <!-- Important Closing & Lock-in Notice -->
+        <section class="closing-alert">
+            <h2>⚠️ Important Lock-Out Notice</h2>
+            <p><strong>YOU MUST EXIT THE POOL BEFORE THE SCHEDULED CLOSING TIME (09:00 PM).</strong></p>
+            <p>All pool access keys will stop working shortly after the scheduled closing time. Failure to exit the pool area by 9:00 PM may result in an <strong>unintended lock-in, suspended community access privileges, and considerable delays</strong> in receiving gate assistance.</p>
+            <div class="emergency-call">
+                🚨 IN THE EVENT OF AN UNINTENDED LOCK-IN: Call <span>(816) 514-7268</span> – DO NOT CLIMB THE FENCE.
+            </div>
+        </section>
+
         <!-- Schedule Section -->
         <h2 class="section-title">Pool Schedule & Access</h2>
         <div class="hours-grid">
