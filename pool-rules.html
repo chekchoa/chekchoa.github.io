@@ -6,17 +6,17 @@
     <title>Carriage Hill Estates HOA - Pool Rules & Safety</title>
     <style>
         :root {
-            /* Midwestern Warmth & Missouri "Show Me" Palette */
-            --primary: #8B4513;        /* Warm Walnut / Heartland Earth */
-            --primary-light: #FBF6F0;  /* Soft Cream Prairie Sky */
-            --secondary: #1F4E3D;      /* Deep Missouri Forest Green */
-            --secondary-light: #EBF2EE;/* Light Sage */
-            --dark: #2F2E2C;           /* Weathered Charcoal */
+            /* Missouri Midwestern Heart & Warmth Palette */
+            --primary: #1C3B57;        /* Deep River Blue (Missouri River & Trust) */
+            --primary-light: #F7F5F0;  /* Heartland Cream (Warm, welcoming backdrop) */
+            --secondary: #3D6B50;      /* Rolling Hills Green (Missouri's natural landscapes) */
+            --secondary-light: #EBF2EE;/* Soft Sage Accent */
+            --dark: #2D3134;           /* Solid Charcoal */
             --light: #ffffff;
-            --accent: #D97724;         /* Prairie Autumn Sunset Gold */
-            --gray: #7A7571;
-            --border-radius: 8px;      /* Sturdy, traditional corners */
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.1);
+            --accent: #C87A24;         /* Prairie Sunset Gold (Warmth, community, and attention) */
+            --gray: #6C7278;
+            --border-radius: 8px;      /* Clean, sturdy, traditional corners */
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -26,55 +26,50 @@
         }
 
         body {
-            font-family: 'Georgia', 'Segoe UI', serif; /* A touch of classic, grounded typography */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--dark);
-            background-color: #F5EFE6; /* Warm sand/soil undertone */
+            background-color: #F2EFE9; /* Warm, earth-toned cream base */
         }
 
         header {
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--light);
-            padding: 4.5rem 2rem 3.5rem;
+            padding: 4rem 2rem 3rem;
             text-align: center;
             position: relative;
-            border-bottom: 6px solid var(--accent);
+            border-bottom: 5px solid var(--accent);
         }
 
         .header-container h1 {
-            font-size: 2.6rem;
-            margin-bottom: 0.75rem;
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
             font-weight: 700;
             letter-spacing: -0.5px;
-            font-family: 'Georgia', serif;
         }
 
         .header-container p {
             font-size: 1.15rem;
             opacity: 0.95;
-            max-width: 650px;
+            max-width: 600px;
             margin: 0 auto;
-            font-family: 'Segoe UI', sans-serif;
-            font-style: italic;
-            letter-spacing: 0.5px;
+            font-weight: 400;
         }
 
         main {
             max-width: 1100px;
             margin: 3rem auto;
             padding: 0 1.5rem;
-            font-family: 'Segoe UI', sans-serif; /* Clean reading font for rules */
         }
 
         .section-title {
             font-size: 1.6rem;
-            color: var(--secondary);
+            color: var(--primary);
             margin-bottom: 1.5rem;
             padding-bottom: 0.4rem;
             border-bottom: 3px solid var(--accent);
             display: inline-block;
-            font-family: 'Georgia', serif;
-            font-weight: bold;
+            font-weight: 700;
         }
 
         /* Evening Closing Policy Section */
@@ -96,7 +91,8 @@
 
         .closing-text p {
             margin-bottom: 1rem;
-            font-size: 1.05rem;
+            font-size: 1rem;
+            color: var(--dark);
         }
 
         .closing-text p:last-child {
@@ -105,22 +101,24 @@
 
         .assistance-box {
             background: var(--primary-light);
-            border: 2px solid var(--accent);
+            border: 1px solid #E1DCD3;
+            border-top: 4px solid var(--accent);
             padding: 1.5rem;
             border-radius: var(--border-radius);
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .assistance-box h4 {
             color: var(--primary);
             margin-bottom: 0.5rem;
-            font-size: 1.15rem;
-            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
         }
 
         .phone-number {
             display: block;
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: bold;
             color: var(--accent);
             margin: 0.5rem 0;
@@ -129,6 +127,7 @@
 
         .phone-number:hover {
             text-decoration: underline;
+            color: var(--primary);
         }
 
         .fence-warning {
@@ -150,7 +149,7 @@
             border-radius: var(--border-radius);
             padding: 2rem;
             box-shadow: var(--shadow);
-            border-top: 5px solid var(--secondary);
+            border-top: 5px solid var(--primary);
             transition: transform 0.2s ease;
         }
 
@@ -159,18 +158,18 @@
         }
 
         .hours-card.maintenance {
-            border-top-color: var(--primary);
+            border-top-color: var(--secondary);
         }
 
         .hours-card h3 {
             font-size: 1.3rem;
-            color: var(--secondary);
+            color: var(--primary);
             margin-bottom: 0.5rem;
-            font-family: 'Georgia', serif;
+            font-weight: 700;
         }
 
         .hours-card .time {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: bold;
             color: var(--primary);
             margin-bottom: 1.1rem;
@@ -178,12 +177,13 @@
             background: var(--primary-light);
             padding: 0.25rem 0.85rem;
             border-radius: 4px;
-            border: 1px solid #ebdccb;
+            border: 1px solid #E1DCD3;
         }
 
         .hours-card.maintenance .time {
-            color: var(--primary);
-            background: var(--primary-light);
+            color: var(--secondary);
+            background: var(--secondary-light);
+            border-color: #D3DDD7;
         }
 
         .hours-card ul {
@@ -200,7 +200,7 @@
 
         .hours-card li::before {
             content: "✓";
-            color: var(--accent);
+            color: var(--secondary);
             font-weight: bold;
             font-size: 1rem;
             position: absolute;
@@ -223,14 +223,14 @@
         }
 
         .rules-category h4 {
-            font-size: 1.15rem;
-            color: var(--secondary);
+            font-size: 1.1rem;
+            color: var(--primary);
             margin-bottom: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            border-bottom: 2px solid var(--secondary-light);
+            border-bottom: 2px solid var(--primary-light);
             padding-bottom: 0.5rem;
-            font-family: 'Georgia', serif;
+            font-weight: 700;
         }
 
         .rules-list {
@@ -238,9 +238,9 @@
         }
 
         .rules-list li {
-            padding: 0.65rem 0 0.65rem 1.75rem;
+            padding: 0.65rem 0 0.65rem 1.5rem;
             position: relative;
-            border-bottom: 1px solid #f3ebe1;
+            border-bottom: 1px solid #F2EFE9;
             font-size: 0.95rem;
         }
 
@@ -260,33 +260,36 @@
 
         /* Highlight box for critical rules */
         .critical-note {
-            background-color: var(--secondary-light);
-            border-left: 4px solid var(--secondary);
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--primary);
             padding: 1.2rem;
             margin-bottom: 2rem;
             border-radius: 0 var(--border-radius) var(--border-radius) 0;
             font-size: 0.95rem;
-            color: var(--secondary);
+            color: var(--primary);
+            border: 1px solid #E1DCD3;
+            border-left: 4px solid var(--primary);
         }
 
         footer {
             text-align: center;
             padding: 3.5rem 1rem;
             margin-top: 5rem;
-            background-color: var(--secondary);
-            color: var(--secondary-light);
+            background-color: var(--primary);
+            color: var(--primary-light);
             font-size: 0.9rem;
             border-top: 4px solid var(--accent);
         }
 
         footer p {
             margin-bottom: 0.5rem;
+            opacity: 0.9;
         }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
             header { padding: 3.5rem 1rem 2.5rem; }
-            .header-container h1 { font-size: 2rem; }
+            .header-container h1 { font-size: 1.8rem; }
             main { margin: 1.5rem auto; }
             .closing-container { padding: 1.5rem; }
             .closing-content { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -310,7 +313,7 @@
         <div class="closing-container">
             <div class="closing-content">
                 <div class="closing-text">
-                    <p>To ensure the security of our community facility, please plan to <strong>exit the pool area before our scheduled 9:00 PM closing time</strong>.</p>
+                    <p>To ensure the safety and security of our community facility, please plan to <strong>exit the pool area before our scheduled 9:00 PM closing time</strong>.</p>
                     <p>Our automated neighborhood pool keys deactivate promptly at closing. Gathering your belongings and leaving a few minutes early helps prevent an accidental lock-in within the facility gates.</p>
                     <p>Please note that remaining inside after hours may lead to a temporary suspension of pool access privileges, and off-hours gate assistance can involve significant response delays.</p>
                 </div>
@@ -368,7 +371,7 @@
         <div class="rules-container">
             
             <div class="critical-note">
-                <strong>Show Me Clean & Safe:</strong> The Carriage Hill Estates pool is a shared home for all our neighbors. Please review our safety and facility rules below to ensure an honest, neighborly, and clear environment for all families.
+                <strong>A Safe Community Environment:</strong> The Carriage Hill Estates pool is a shared amenity for all our neighbors. Please review our safety and facility rules below to ensure an enjoyable, neighborly, and secure experience for everyone.
             </div>
 
             <div class="rules-grid">
@@ -418,7 +421,7 @@
 
     <footer>
         <p>&copy; 2026 Carriage Hill Estates Homeowners Association. All Rights Reserved.</p>
-        <p>Thank you for doing your part to keep our neighborhood pool safe, clean, and warm for everyone!</p>
+        <p>Thank you for partnering with your neighbors to keep our pool safe, clean, and welcoming!</p>
     </footer>
 
 </body>
