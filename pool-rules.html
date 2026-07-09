@@ -12,8 +12,6 @@
             --dark: #222831;
             --light: #ffffff;
             --accent: #e07a5f;
-            --danger: #d9383a;
-            --danger-light: #fff5f5;
             --gray: #6c757d;
             --border-radius: 12px;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -81,55 +79,63 @@
             display: inline-block;
         }
 
-        /* Critical Closing Information Alert Box */
-        .closing-alert {
-            background-color: var(--danger-light);
-            border: 2px solid var(--danger);
-            border-left: 8px solid var(--danger);
+        /* Closing Information Container */
+        .closing-container {
+            background: var(--light);
             border-radius: var(--border-radius);
-            padding: 2rem;
-            margin-bottom: 3rem;
+            padding: 2.5rem;
             box-shadow: var(--shadow);
+            border-top: 5px solid var(--accent);
+            margin-bottom: 4rem;
         }
 
-        .closing-alert h2 {
-            color: var(--danger);
-            font-size: 1.5rem;
+        .closing-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .closing-text p {
             margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            font-size: 1rem;
         }
 
-        .closing-alert p {
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
-        }
-
-        .closing-alert p:last-of-type {
+        .closing-text p:last-child {
             margin-bottom: 0;
         }
 
-        .closing-alert strong {
-            color: #9b1c1c;
+        .assistance-box {
+            background: #fff5f2;
+            border: 1px dashed var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
         }
 
-        .emergency-call {
-            background: var(--light);
-            border: 1px solid #f8b4b4;
-            padding: 1rem;
-            border-radius: 6px;
-            margin-top: 1rem;
+        .assistance-box h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .phone-number {
+            display: block;
+            font-size: 1.3rem;
             font-weight: bold;
-            display: inline-block;
             color: var(--dark);
+            margin: 0.5rem 0;
+            text-decoration: none;
         }
 
-        .emergency-call span {
-            color: var(--danger);
-            font-size: 1.2rem;
+        .phone-number:hover {
+            color: var(--primary);
+        }
+
+        .fence-warning {
+            font-size: 0.85rem;
+            color: var(--gray);
+            font-style: italic;
         }
 
         /* Hours Grid */
@@ -283,6 +289,8 @@
             header { padding: 3rem 1rem 2rem; }
             .header-container h1 { font-size: 2rem; }
             main { margin: 1.5rem auto; }
+            .closing-container { padding: 1.5rem; }
+            .closing-content { grid-template-columns: 1fr; gap: 1.5rem; }
             .rules-container { padding: 1.5rem; }
         }
     </style>
@@ -337,17 +345,24 @@
             </div>
 
         </div>
-
-         <!-- Important Closing & Lock-in Notice -->
-        <section class="closing-alert">
-            <h2>⚠️ Important Lock-Out Notice</h2>
-            <p><strong>YOU MUST EXIT THE POOL BEFORE THE SCHEDULED CLOSING TIME (09:00 PM).</strong></p>
-            <p>All pool access keys will stop working shortly after the scheduled closing time. Failure to exit the pool area by 9:00 PM may result in an <strong>unintended lock-in, suspended community access privileges, and considerable delays</strong> in receiving gate assistance.</p>
-            <div class="emergency-call">
-                🚨 IN THE EVENT OF AN UNINTENDED LOCK-IN: Call <span>(816) 514-7268</span> – FOR YOUR SAFETY DO NOT CLIMB THE FENCE.
-            </div>
-        </section>
         
+ <!-- Evening Closing Policy Section -->
+        <h2 class="section-title">Evening Closing Policy</h2>
+        <div class="closing-container">
+            <div class="closing-content">
+                <div class="closing-text">
+                    <p>To ensure the security of our community facility, please plan to <strong>exit the pool area before our scheduled 9:00 PM closing time</strong>.</p>
+                    <p>Our automated neighborhood pool keys deactivate promptly at closing. Gathering your belongings and leaving a few minutes early helps prevent an accidental lock-in within the facility gates.</p>
+                    <p>Please note that remaining inside after hours may lead to a temporary suspension of pool access privileges, and off-hours gate assistance can involve significant response delays.</p>
+                </div>
+                <div class="assistance-box">
+                    <h4>Need Gate Assistance?</h4>
+                    <p>If you find yourself inadvertently locked in, please call:</p>
+                    <a href="tel:8165147268" class="phone-number">(816) 514-7268</a>
+                    <p class="fence-warning">For your safety, please do not attempt to climb the fence.</p>
+                </div>
+            </div>
+        </div>
         <!-- Rules Section -->
         <h2 class="section-title">Pool Rules & Guidelines</h2>
         <div class="rules-container">
