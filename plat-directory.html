@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carriage Hill Estates HOA - Plat Directory</title>
+    <style>
+        :root {
+            /* Monument-Inspired Color Palette */
+            --monument-stone-light: #e3be85;
+            --monument-stone-mid: #cfa365;
+            --monument-stone-dark: #a67c42;
+            --monument-bronze: #26211a;
+            --monument-bronze-shadow: rgba(38, 33, 26, 0.3);
+            
+            /* Standard Layout Variables */
+            --primary: #1a5f7a;
+            --primary-light: #f0f7f9;
+            --secondary: #57c5b6;
+            --dark: #222831;
+            --light: #ffffff;
+            --accent: #e07a5f;
+            --gray: #6c757d;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+            --nav-height: 60px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f8f9fa;
+            padding-top: var(--nav-height);
+        }
+
+        /* Top Navigation Bar */
+        .top-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-left .nav-link {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        /* Monument Textured Header */
+        header {
+            background: linear-gradient(
+                135deg, 
+                var(--monument-stone-light) 0%, 
+                var(--monument-stone-mid) 50%, 
+                var(--monument-stone-dark) 100%
+            );
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--monument-bronze);
+            box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            opacity: 0.15;
+            background-image: radial-gradient(var(--monument-bronze) 1px, transparent 0),
+                              radial-gradient(var(--monument-bronze) 1px, transparent 0);
+            background-size: 8px 8px;
+            background-position: 0 0, 4px 4px;
+            pointer-events: none;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .header-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-container h1 {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-size: 2.8rem;
+            color: var(--monument-bronze);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.4), 
+                         2px 3px 6px var(--monument-bronze-shadow);
+        }
+
+        .header-container p {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.15rem;
+            color: var(--monument-bronze);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.85;
+            max-width: 750px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(38, 33, 26, 0.2);
+            padding-top: 0.75rem;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+            min-height: 60vh;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary);
+            display: inline-block;
+        }
+
+        /* Notifications & Alerts */
+        .notice-container {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--primary);
+            margin-bottom: 2.5rem;
+        }
+
+        .notice-container.update-alert {
+            border-left-color: var(--accent);
+            display: none;
+        }
+
+        .notice-container h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Search & Autocomplete Interface */
+        .search-section {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+
+        .search-control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            position: relative;
+        }
+
+        .search-label {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+
+        .search-box-wrapper {
+            position: relative;
+            display: flex;
+            width: 100%;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.9rem 1rem 0.9rem 2.8rem;
+            font-size: 1.1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--secondary);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            font-size: 1.2rem;
+            pointer-events: none;
+        }
+
+        /* Autocomplete List Panel */
+        .autocomplete-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--light);
+            border: 1px solid #e2e8f0;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            max-height: 250px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .autocomplete-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.15s ease;
+            border-bottom: 1px solid #f8f9fa;
+            font-size: 1rem;
+        }
+
+        .autocomplete-item:last-child {
+            border-bottom: none;
+        }
+
+        .autocomplete-item:hover, .autocomplete-item.active {
+            background-color: var(--primary-light);
+            color: var(--primary);
+        }
+
+        /* Statistics Overview Ribbon */
+        .stats-ribbon {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--secondary);
+            text-align: center;
+        }
+
+        .stat-val {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-lbl {
+            font-size: 0.85rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* Results / Display Content Layout */
+        .results-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .plat-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid #eef2f3;
+            overflow: hidden;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .plat-card-header {
+            background-color: var(--primary-light);
+            padding: 1.25rem 2rem;
+            border-bottom: 1px solid #eef2f3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .plat-card-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .plat-data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .plat-data-row {
+            border-bottom: 1px solid #f8f9fa;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+        }
+
+        .plat-data-row:last-child {
+            border-bottom: none;
+        }
+
+        .plat-data-label {
+            padding: 1rem 2rem;
+            background-color: #fafbfc;
+            font-weight: 600;
+            color: var(--gray);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .plat-data-value {
+            padding: 1rem 2rem;
+            font-size: 1.05rem;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+        }
+
+        /* Links and Specific Layout Trims */
+        .gis-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .gis-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+
+        .mask-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .btn-reveal {
+            background-color: var(--primary);
+            color: var(--light);
+            border: none;
+            padding: 0.4rem 0.9rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.15s ease;
+        }
+
+        .btn-reveal:hover {
+            background-color: var(--secondary);
+        }
+
+        .owner-hidden-text {
+            font-style: italic;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            color: var(--gray);
+        }
+
+        .empty-state h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-reset {
+            margin-top: 1rem;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border: 1px solid #e2edf0;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-reset:hover {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 5rem;
+            background-color: var(--dark);
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            body { padding-top: calc(var(--nav-height) + 10px); }
+            .top-navbar { padding: 0 1rem; }
+            .nav-right { gap: 0.75rem; }
+            main { margin: 1.5rem auto; }
+            .search-section { padding: 1.25rem; }
+            .plat-card-header { padding: 1rem 1.25rem; }
+            .plat-data-row { grid-template-columns: 1fr; }
+            .plat-data-label { padding: 0.5rem 1.25rem; background-color: transparent; border-bottom: 1px dashed #f0f0f0; }
+            .plat-data-value { padding: 0.5rem 1.25rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+        <div class="nav-left">
+            <a href="#" class="nav-link">🏠 Carriage Hill Estates</a>
+        </div>
+        <div class="nav-right">
+            <a href="#" class="nav-link">Pool Rules</a>
+            <a href="#" class="nav-link">Court Rules</a>
+            <a href="#" class="nav-link">Documents</a>
+        </div>
+    </nav>
+
+    <!-- Monument Redesigned Header Component -->
+    <header>
+        <div class="header-container">
+            <h1>Carriage Hill Estates</h1>
+            <p>Neighborhood Plat &amp; Parcel Directory</p>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Fresh Update Dynamic Warning Alert Box -->
+        <div class="notice-container update-alert" id="updateNotification">
+            <h3 style="color: var(--accent);">🔄 Directory Update Available</h3>
+            <p>The system has discovered an updated configuration for the plat dataset directory. Please <a href="javascript:window.location.reload();" style="color: var(--accent); font-weight: 700;">refresh your page</a> to ensure parcel references remain synchronous.</p>
+        </div>
+
+        <!-- Informational Guideline Notice Container -->
+        <div class="notice-container">
+            <h3>🗺️ Public Parcel References</h3>
+            <p>Welcome to the community plat reference terminal. Here, members can easily verify parcel records across our 15 sub-plats. County APN entries map directly out to official real-estate spatial mapping grids managed by the Clay County Assessor's division.</p>
+        </div>
+
+        <!-- Integrated Summary Indicators Overview -->
+        <div class="stats-ribbon">
+            <div class="stat-card">
+                <span class="stat-val" id="statHomes">---</span>
+                <span class="stat-lbl">Registered Lots</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-val" id="statPlats">---</span>
+                <span class="stat-lbl">Subdivided Plats</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-val">Clay County</span>
+                <span class="stat-lbl">Jurisdictional Zone</span>
+            </div>
+        </div>
+
+        <!-- Optimized Filtering Area -->
+        <h2 class="section-title">Search Properties</h2>
+        <div class="search-section">
+            <div class="search-control-group">
+                <label for="addressSearch" class="search-label">Enter Resident Street Address:</label>
+                <div class="search-box-wrapper">
+                    <span class="search-icon" aria-hidden="true">🔍</span>
+                    <input type="text" id="addressSearch" class="search-input" placeholder="e.g. 4917 NE 60TH TER" autocomplete="off" aria-autocomplete="list" aria-controls="autocompleteList">
+                    <!-- Dropdown Dynamic Rendering Frame -->
+                    <div class="autocomplete-dropdown" id="autocompleteList" role="listbox"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Display Engine Target Area -->
+        <h2 class="section-title" id="resultsTitle">Property Records</h2>
+        <div class="results-container" id="resultsOutput">
+            <div class="empty-state">
+                <h3>Awaiting Address Queries</h3>
+                <p>Please type an address above or use the autocomplete search system to select a specific property record.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Carriage Hill Estates Homeowners Association. All Rights Reserved.</p>
+        <p>Information extracted synchronously from standard municipal GIS databases for reference access only.</p>
+    </footer>
+
+    <script>
+        // Data and System Tracking Registries
+        let dataset = [];
+        let currentFocusIndex = -1;
+        const TARGET_ENDPOINT = '/data/plat-data.json';
+        const STORAGE_VERSION_KEY = 'che_plat_dataset_version';
+
+        // Selectors Cache
+        const searchInput = document.getElementById('addressSearch');
+        const dropdownList = document.getElementById('autocompleteList');
+        const resultsOutput = document.getElementById('resultsOutput');
+
+        // Initial setup
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeDatasetFetch();
+            setupInputEventListeners();
+            setupDeepLinkProcessing();
+        });
+
+        // Pull dataset record arrays safely from the structural target address
+        async function initializeDatasetFetch() {
+            try {
+                const response = await fetch(TARGET_ENDPOINT);
+                if (!response.ok) {
+                    throw new Error(`Data retrieval failed: ${response.status} ${response.statusText}`);
+                }
+                
+                // Track resource fresh status tags
+                const tag = response.headers.get('ETag') || response.headers.get('Last-Modified');
+                if (tag) {
+                    localStorage.setItem(STORAGE_VERSION_KEY, tag);
+                }
+
+                dataset = await response.json();
+                populateContextMetrics(dataset);
+                
+                // Re-process inputs if a deep link value loaded prior to payload resolution
+                handleDeepLink();
+                
+            } catch (err) {
+                console.error(err);
+                resultsOutput.innerHTML = `
+                    <div class="empty-state" style="border-top: 5px solid var(--accent);">
+                        <h3>Database Matrix Unavailable</h3>
+                        <p>We encountered a connection interruption attempting to pull information from standard path coordinates.</p>
+                        <p style="font-size:0.85rem; color:var(--gray); margin-top:0.5rem;">System Error Details: ${escapeHTML(err.message)}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Fill dynamic analytics badges across the display ribbon
+        function populateContextMetrics(records) {
+            document.getElementById('statHomes').textContent = records.length;
+            
+            // Generate set list to map unique plats
+            const uniquePlats = new Set();
+            records.forEach(item => {
+                if(item.platname) uniquePlats.add(item.platname.trim().toUpperCase());
+            });
+            document.getElementById('statPlats').textContent = uniquePlats.size || 15;
+        }
+
+        // Configure system hooks for input filters and autocomplete selection routing
+        function setupInputEventListeners() {
+            // Processing search modifications
+            searchInput.addEventListener('input', () => {
+                const criteria = searchInput.value.toUpperCase().trim();
+                currentFocusIndex = -1;
+                
+                if (!criteria) {
+                    hideAutocompleteMenu();
+                    return;
+                }
+
+                // Filter matching property items (Addresses only match against starting substrings for usability)
+                const matches = dataset.filter(item => 
+                    item.address && item.address.toUpperCase().includes(criteria)
+                ).slice(0, 10); // Clamp results preview matrix sizes down to top 10 rows
+
+                renderAutocompleteDropdown(matches, criteria);
+            });
+
+            // Handling accessibility key down maps across lists
+            searchInput.addEventListener('keydown', (e) => {
+                const items = dropdownList.getElementsByClassName('autocomplete-item');
+                if (items.length === 0) return;
+
+                if (e.key === 'ArrowDown') {
+                    currentFocusIndex++;
+                    updateActiveSelectionStatus(items);
+                    e.preventDefault();
+                } else if (e.key === 'ArrowUp') {
+                    currentFocusIndex--;
+                    updateActiveSelectionStatus(items);
+                    e.preventDefault();
+                } else if (e.key === 'Enter') {
+                    if (currentFocusIndex > -1 && items[currentFocusIndex]) {
+                        items[currentFocusIndex].click();
+                    } else if (items.length > 0) {
+                        items[0].click(); // Select fallback item alternative
+                    }
+                    e.preventDefault();
+                } else if (e.key === 'Escape') {
+                    hideAutocompleteMenu();
+                }
+            });
+
+            // Tap anywhere on window boundaries clears interactive popover lists
+            document.addEventListener('click', (e) => {
+                if (e.target !== searchInput && e.target !== dropdownList) {
+                    hideAutocompleteMenu();
+                }
+            });
+        }
+
+        // Render layout arrays into the target auto drop container
+        function renderAutocompleteDropdown(matches, currentText) {
+            dropdownList.innerHTML = '';
+            
+            if (matches.length === 0) {
+                dropdownList.innerHTML = `<div class="autocomplete-item style='color:var(--gray); cursor:default;'">No matching properties found</div>`;
+                dropdownList.style.display = 'block';
+                return;
+            }
+
+            matches.forEach((matchedItem) => {
+                const row = document.createElement('div');
+                row.className = 'autocomplete-item';
+                row.setAttribute('role', 'option');
+                
+                // Highlight corresponding matching textual segments inside strings
+                const matchIndex = matchedItem.address.toUpperCase().indexOf(currentText);
+                if (matchIndex >= 0) {
+                    const firstPart = matchedItem.address.substring(0, matchIndex);
+                    const matchedPart = matchedItem.address.substring(matchIndex, matchIndex + currentText.length);
+                    const lastPart = matchedItem.address.substring(matchIndex + currentText.length);
+                    row.innerHTML = `${escapeHTML(firstPart)}<strong>${escapeHTML(matchedPart)}</strong>${escapeHTML(lastPart)}`;
+                } else {
+                    row.textContent = matchedItem.address;
+                }
+
+                row.addEventListener('click', () => {
+                    searchInput.value = matchedItem.address;
+                    hideAutocompleteMenu();
+                    renderSelectedPlatCard(matchedItem);
+                    updateAddressHashFragment(matchedItem.address);
+                });
+
+                dropdownList.appendChild(row);
+            });
+
+            dropdownList.style.display = 'block';
+        }
+
+        function updateActiveSelectionStatus(items) {
+            if (!items) return;
+            // Bound index constraints cleanly across arrays
+            if (currentFocusIndex >= items.length) currentFocusIndex = 0;
+            if (currentFocusIndex < 0) currentFocusIndex = items.length - 1;
+
+            // Strip existing active item classes
+            for (let i = 0; i < items.length; i++) {
+                items[i].classList.remove('active');
+            }
+            
+            items[currentFocusIndex].classList.add('active');
+            items[currentFocusIndex].scrollIntoView({ block: 'nearest' });
+        }
+
+        function hideAutocompleteMenu() {
+            dropdownList.style.display = 'none';
+            dropdownList.innerHTML = '';
+            currentFocusIndex = -1;
+        }
+
+        // Output specific property tables in precisely matched order
+        function renderSelectedPlatCard(record) {
+            if (!record) return;
+
+            const targetTitle = document.getElementById('resultsTitle');
+            targetTitle.textContent = `Property Record for ${escapeHTML(record.address)}`;
+
+            // Build structural elements safely with proper layout constraints
+            // Sequence Requirements Order: city_pin, county_apn, address, owners, platname, block, lot, and legal_description
+            const cardMarkup = `
+                <div class="plat-card">
+                    <div class="plat-card-header">
+                        <span class="plat-card-title">📍 ${escapeHTML(record.address)}</span>
+                    </div>
+                    <div class="plat-data-table">
+                        
+                        <!-- City Pin -->
+                        <div class="plat-data-row">
+                            <div class="plat-data-label">City Pin</div>
+                            <div class="plat-data-value" style="font-family: monospace; font-weight:600;">${escapeHTML(record.city_pin || 'N/A')}</div>
+                        </div>
+
+                        <!-- County APN (Hyperlink Modified Formats) -->
+                        <div class="plat-data-row">
+                            <div class="plat-data-label">County APN</div>
+                            <div class="plat-data-value">
+                                ${record.county_apn ? `
+                                    <a href="https://gisweb.claycountymo.gov/maps/index.html?p=${encodeURIComponent(record.county_apn)}" target="_blank" rel="noopener noreferrer" class="gis-link">
+                                        ${escapeHTML(record.county_apn)} 🌐 <span style="font-size:0.8rem; font-weight:normal;">(Open Clay County GIS)</span>
+                                    </a>
+                                ` : 'N/A'}
+                            </div>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="plat-data-row">
+                            <div class="plat-data-label">Address</div>
+                            <div class="plat-data-value" style="font-weight: 600;">${escapeHTML(record.address || 'N/A')}</div>
+                        </div>
+
+                        <!-- Owners (Security Masking Implementations) -->
+                        <div class="plat-data-row">
+                            <div class="plat-data-label">Owners</div>
+                            <div class="plat-data-value">
+                                <div class="mask-wrapper" id="maskTargetRow">
+                                    <span class="owner-hidden-text">Hidden for community privacy</span>
+                                    <button type="button" class="btn-reveal" onclick="revealPropertyOwner('${escapeJSString(record.owners || 'No record identified')}')">Reveal Name</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Plat Name -->
+                        <div class="plat-data-row">
+                            <div class="plat-data-label">Plat Name</div>
+                            <div class="plat-data-value">${escapeHTML(record.platname || 'N/A')}</div>
+                        </div>
+
+                        <!-- Block -->
+                        <div class="plat-data-row">
+                            <div class="plat-data-label">Block</div>
+                            <div class="plat-data-value">${escapeHTML(record.block || 'N/A')}</div>
+                        </div>
+
+                        <!-- Lot -->
+                        <div class="plat-data-row">
+                            <div class="plat-data-label">Lot</div>
+                            <div class="plat-data-value">${escapeHTML(record.lot || 'N/A')}</div>
+                        </div>
+
+                        <!-- Legal Description -->
+                        <div class="plat-data-row">
+                            <div class="plat-data-label">Legal Description</div>
+                            <div class="plat-data-value" style="font-size:0.95rem; color:var(--gray); line-height:1.4;">${escapeHTML(record.legal_description || 'N/A')}</div>
+                        </div>
+
+                    </div>
+                </div>
+                <center><button class="btn-reset" onclick="clearActivePropertyView()">Clear Results</button></center>
+            `;
+
+            resultsOutput.innerHTML = cardMarkup;
+            
+            // Smoothly index views toward specific content components
+            setTimeout(() => {
+                targetTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+
+        // Swapping mask nodes with the actual name string values
+        function revealPropertyOwner(ownerName) {
+            const targetContainer = document.getElementById('maskTargetRow');
+            if (targetContainer) {
+                targetContainer.style.opacity = '0';
+                setTimeout(() => {
+                    targetContainer.innerHTML = `<span style="font-weight:600; color:var(--primary); animation: fadeIn 0.2s ease;">${escapeHTML(ownerName)}</span>`;
+                    targetContainer.style.opacity = '1';
+                }, 150);
+            }
+        }
+
+        // Clean values out to default structures
+        function clearActivePropertyView() {
+            searchInput.value = '';
+            document.getElementById('resultsTitle').textContent = 'Property Records';
+            resultsOutput.innerHTML = `
+                <div class="empty-state">
+                    <h3>Awaiting Address Queries</h3>
+                    <p>Please type an address above or use the autocomplete search system to select a specific property record.</p>
+                </div>
+            `;
+            if (window.location.hash || window.location.search) {
+                window.history.pushState("", document.title, window.location.pathname);
+            }
+        }
+
+        // Manage hash routes or parameter fragments to link specific records
+        function setupDeepLinkProcessing() {
+            window.addEventListener('hashchange', handleDeepLink);
+        }
+
+        function handleDeepLink() {
+            if (dataset.length === 0) return; // Prevent parsing before array is loaded
+
+            let lookUpQuery = "";
+            const queryParams = new URLSearchParams(window.location.search);
+            
+            // Try query matching syntax first
+            if (queryParams.has('doc')) {
+                lookUpQuery = queryParams.get('doc');
+            } else {
+                // Parse standard route parameters or folder fragments
+                const currentHash = window.location.hash;
+                if (currentHash.startsWith('#/doc/')) {
+                    lookUpQuery = currentHash.replace('#/doc/', '');
+                } else if (currentHash.length > 1) {
+                    lookUpQuery = currentHash.substring(1);
+                }
+            }
+
+            if (!lookUpQuery) return;
+
+            // Trim out path prefixes if users pass them inside parameter flags
+            if (lookUpQuery.includes('/')) {
+                const pieces = lookUpQuery.split('/');
+                lookUpQuery = pieces[pieces.length - 1];
+            }
+
+            const cleanString = decodeURIComponent(lookUpQuery).trim().toUpperCase();
+            const matchedRow = dataset.find(x => x.address && x.address.toUpperCase() === cleanString);
+
+            if (matchedRow) {
+                searchInput.value = matchedRow.address;
+                renderSelectedPlatCard(matchedRow);
+            } else {
+                // Generate a visual parsing error if deep-link parameters do not exist in the collection
+                resultsOutput.innerHTML = `
+                    <div class="empty-state" style="border-top:5px solid var(--accent);">
+                        <h3>Address Record Query Not Found</h3>
+                        <p>A direct record shortcut was requested for "${escapeHTML(decodeURIComponent(lookUpQuery))}", but this specific address does not exist within the Carriage Hill Estates directory.</p>
+                        <button class="btn-reset" onclick="clearActivePropertyView()">Return to Directory</button>
+                    </div>
+                `;
+            }
+        }
+
+        function updateAddressHashFragment(addressString) {
+            window.location.hash = `#/doc/${encodeURIComponent(addressString.toLowerCase())}`;
+        }
+
+        // Perform asynchronous network headers evaluation against background services
+        async function checkForUpdates() {
+            try {
+                const response = await fetch(TARGET_ENDPOINT, { method: 'HEAD' });
+                const localVersionTag = localStorage.getItem(STORAGE_VERSION_KEY);
+                const cloudVersionTag = response.headers.get('ETag') || response.headers.get('Last-Modified');
+
+                if (cloudVersionTag && localVersionTag && cloudVersionTag !== localVersionTag) {
+                    document.getElementById('updateNotification').style.display = 'block';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            } catch (err) {
+                console.warn("Update validation sync skipped:", err);
+            }
+        }
+
+        // Automated execution loops to check resource tracking signatures silently every 5 minutes
+        setInterval(checkForUpdates, 300000);
+
+        // Utility: Protect dynamically rendered templates from XSS injections
+        function escapeHTML(str) {
+            if (!str) return '';
+            return str.replace(/[&<>'"]/g, 
+                tag => ({
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    "'": '&#39;',
+                    '"': '&quot;'
+                }[tag] || tag)
+            );
+        }
+
+        // Utility: Strip dangerous characters out from native execution scopes
+        function escapeJSString(str) {
+            if (!str) return '';
+            return str.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '\\"');
+        }
+    </script>
+
+</body>
+</html>
