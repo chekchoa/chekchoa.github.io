@@ -32,44 +32,96 @@
             padding-top: var(--nav-height);
         }
 
-        /* Top Navigation Bar */
-        .top-navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: var(--nav-height);
-            background-color: var(--light);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
+        /* Top Navigation Bar Styles */
+.top-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    background-color: var(--light);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
 
-        .nav-left .nav-link {
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 1.1rem;
-        }
+.nav-left .nav-link {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
 
-        .nav-right {
-            display: flex;
-            gap: 1.5rem;
-        }
+.nav-right {
+    display: flex;
+    gap: 1.5rem;
+}
 
-        .nav-link {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.2s ease;
-            font-size: 0.95rem;
-        }
+.nav-link {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: color 0.2s ease;
+    font-size: 0.95rem;
+}
 
-        .nav-link:hover {
-            color: var(--secondary);
-        }
+.nav-link:hover {
+    color: var(--secondary);
+}
+
+/* Mobile Toggle Button - Hidden on Desktop */
+.nav-toggle-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary);
+    padding: 0.5rem;
+    line-height: 1;
+}
+
+/* Mobile Layout Media Query Breakpoint */
+@media (max-width: 768px) {
+    .top-navbar {
+        padding: 0 1rem;
+    }
+    
+    .nav-toggle-btn {
+        display: block; /* Show menu button on small screens */
+    }
+
+    .nav-right {
+        display: none; /* Hide standard links by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background-color: var(--light);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        padding: 1rem 0;
+        gap: 0;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    /* Active state injected by JS when hamburger is tapped */
+    .nav-right.active {
+        display: flex;
+    }
+
+    .nav-right .nav-link {
+        padding: 0.75rem 1.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .nav-right .nav-link:hover {
+        background-color: var(--primary-light);
+    }
+}
 
         /* Hero Header Section */
         header {
@@ -290,6 +342,8 @@
         <div class="nav-left">
             <a href="/" class="nav-link">🏠 Carriage Hill Estates</a>
         </div>
+        <!-- Added Hamburger Toggle for Mobile Display -->
+    <button type="button" class="nav-toggle-btn" id="navToggle" aria-label="Toggle navigation Menu">☰</button>
         <div class="nav-right">
            <a href="/pool-rules.html" class="nav-link">🏊‍♂️ Pool</a>
 <a href="/court-rules.html" class="nav-link">🎾 Tennis & Pickleball</a>
@@ -427,5 +481,28 @@
         <p>Building a connected, thriving, and peaceful community together.</p>
     </footer>
 
-</body>
+</body><script>
+    // Put this snippet inside your DOMContentLoaded event or at the top of your existing script
+document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', (e) => {
+            navMenu.classList.toggle('active');
+            // Dynamically change icons between hamburger (☰) and close (✖)
+            navToggle.textContent = navMenu.classList.contains('active') ? '✖' : '☰';
+            e.stopPropagation();
+        });
+
+        // Close mobile nav menu automatically if a user clicks outside of it
+        document.addEventListener('click', () => {
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                navToggle.textContent = '☰';
+            }
+        });
+    }
+});
+</script>
 </html>
