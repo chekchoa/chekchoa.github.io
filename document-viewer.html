@@ -130,12 +130,12 @@
             box-shadow: var(--shadow);
             border-left: 6px solid var(--accent);
             margin-bottom: 2.5rem;
-            display: none; /* Shown dynamically if deep link target has auth or is missing */
+            display: none;
         }
 
         .notice-container.info {
             border-left-color: var(--primary);
-            display: block; /* Shown by default for general instructions */
+            display: block;
         }
 
         .notice-container h3 {
@@ -225,11 +225,11 @@
             border-color: #c9654b;
         }
 
-        /* Directory Folder Structure */
+        /* Collapsible Directory Folder Structure */
         .directory-view {
             display: flex;
             flex-direction: column;
-            gap: 2.5rem;
+            gap: 1.5rem;
         }
 
         .folder-card {
@@ -238,20 +238,27 @@
             box-shadow: var(--shadow);
             overflow: hidden;
             border: 1px solid #eef2f3;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .folder-card:hover {
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-        }
-
+        /* Summary Custom Interactive Styling */
         .folder-header {
             background-color: var(--primary-light);
             padding: 1.5rem 2rem;
-            border-bottom: 1px solid #eef2f3;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            cursor: pointer;
+            user-select: none;
+            outline: none;
+            list-style: none; /* Hides default triangle */
+        }
+
+        .folder-header::-webkit-details-marker {
+            display: none; /* Hides safari default triangle */
+        }
+
+        .folder-card[open] .folder-header {
+            border-bottom: 1px solid #eef2f3;
         }
 
         .folder-title-area h3 {
@@ -262,10 +269,23 @@
             gap: 0.75rem;
         }
 
+        /* Disclosure Indicator Chevron placement */
+        .folder-chevron {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: bold;
+            transition: transform 0.25s ease;
+        }
+
+        .folder-card[open] .folder-chevron {
+            transform: rotate(180deg);
+        }
+
         .folder-description {
             font-size: 0.95rem;
             color: var(--gray);
             margin-top: 0.25rem;
+            font-weight: normal;
         }
 
         .file-list {
@@ -362,7 +382,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Screen Reader Friendly Utility */
         .sr-only {
             position: absolute;
             width: 1px;
@@ -391,19 +410,19 @@
 </head>
 <body>
 
-    <!-- Top Navigation Bar -->
     <nav class="top-navbar">
         <div class="nav-left">
             <a href="#" class="nav-link">🏠 Carriage Hill Estates</a>
         </div>
         <div class="nav-right">
-            <a href="#" class="nav-link">Pool Rules</a>
-            <a href="#" class="nav-link">Court Rules</a>
-            <a href="#" class="nav-link">Contact Us</a>
+            <a href="/pool-rules.html" class="nav-link">🏊‍♂️ Pool</a>
+            <a href="/court-rules.html" class="nav-link">🎾 Tennis & Pickleball</a>
+            <a href="/document-viewer.html" class="nav-link">📄 Documents</a>
+            <a href="/contact-us.html" class="nav-link">📡 Contact Us</a>
+            <a href="https://carriagehillestates.appfolio.com/" target="_blank" class="nav-link primary">💼 Portal Login</a>
         </div>
     </nav>
 
-    <!-- Header -->
     <header>
         <div class="header-container">
             <h1>Document Directory</h1>
@@ -413,19 +432,16 @@
 
     <main>
 
-        <!-- Dynamic Link Notifications (Errors or Auth warning) -->
         <div class="notice-container" id="notificationBox">
             <h3 id="notificationTitle">⚠️ Notification</h3>
             <p id="notificationMessage"></p>
         </div>
 
-        <!-- General Info Notice -->
         <div class="notice-container info">
             <h3 style="color: var(--primary);">📂 Navigating Our Library</h3>
-            <p>Below is our official document archive. If you see an orange <strong>"Auth Required"</strong> badge next to a file, you may need your resident credentials or board-authorized email access to view or download it.</p>
+            <p>Below is our official document archive. Folders are collapsed by default to optimize space; simply click a folder's header row to open it and view its contents.</p>
         </div>
 
-        <!-- Control and Search Panel -->
         <div class="control-panel">
             <div class="search-wrapper">
                 <span class="search-icon" aria-hidden="true">🔍</span>
@@ -437,10 +453,8 @@
             </div>
         </div>
 
-        <!-- Directory Section -->
         <h2 class="section-title">Community Folders</h2>
         <div class="directory-view" id="directoryRoot">
-            <!-- Dynamic loading indicator initially -->
             <div class="empty-state">
                 <h3>Loading Document Library...</h3>
                 <p>Establishing secure connection to files.</p>
@@ -455,28 +469,23 @@
     </footer>
 
     <script>
-        // Store our directory and version metadata globally
         let documentData = [];
         const JSON_PATH = '/documents.json';
         const STORAGE_KEY_VERSION = 'che_docs_version';
 
-        // Set up Event Listeners on Load
         document.addEventListener('DOMContentLoaded', () => {
             loadDocuments();
             document.getElementById('directorySearch').addEventListener('input', handleSearch);
         });
 
-        // Fetch directory and process hash route/query parameters
         async function loadDocuments() {
             const root = document.getElementById('directoryRoot');
             try {
-                // Fetch resource and register version headers if available
                 const response = await fetch(JSON_PATH);
                 if (!response.ok) {
                     throw new Error(`Failed to load: ${response.status} ${response.statusText}`);
                 }
                 
-                // Track resource state for freshness checks
                 const etag = response.headers.get('ETag');
                 const lastModified = response.headers.get('Last-Modified');
                 if (etag || lastModified) {
@@ -485,8 +494,6 @@
 
                 documentData = await response.json();
                 renderDirectory(documentData);
-                
-                // Handle deep linking routes
                 handleDeepLink();
 
             } catch (error) {
@@ -501,246 +508,5 @@
             }
         }
 
-        // Search mechanism to dynamically match files or folders
         function handleSearch(e) {
-            const query = e.target.value.toLowerCase().trim();
-            if (!query) {
-                renderDirectory(documentData);
-                return;
-            }
-
-            // Filter model
-            const filtered = documentData.map(folder => {
-                // If folder name or description matches query, keep all its files
-                const folderMatch = folder.name.toLowerCase().includes(query) || 
-                                    (folder.description && folder.description.toLowerCase().includes(query));
-                
-                if (folderMatch) {
-                    return folder;
-                }
-
-                // If folder does not match, filter files by match
-                const matchedFiles = folder.files.filter(file => 
-                    file.name.toLowerCase().includes(query) || 
-                    (file.description && file.description.toLowerCase().includes(query))
-                );
-
-                if (matchedFiles.length > 0) {
-                    return { ...folder, files: matchedFiles };
-                }
-
-                return null;
-            }).filter(item => item !== null);
-
-            renderDirectory(filtered, true);
-        }
-
-        // Render routine
-        function renderDirectory(data, isSearching = false) {
-            const container = document.getElementById('directoryRoot');
-            
-            if (data.length === 0) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <h3>No Documents Found</h3>
-                        <p>${isSearching ? "No files or folders matched your current search parameters." : "No documents are currently available in the directory."}</p>
-                    </div>
-                `;
-                return;
-            }
-
-            let html = '';
-            data.forEach((folder, folderIdx) => {
-                const safeFolderId = encodeURIComponent(folder.name);
-                html += `
-                    <div class="folder-card" id="folder-${safeFolderId}">
-                        <div class="folder-header">
-                            <div class="folder-title-area">
-                                <h3>📁 ${escapeHTML(folder.name)}</h3>
-                                ${folder.description ? `<p class="folder-description">${escapeHTML(folder.description)}</p>` : ''}
-                            </div>
-                        </div>
-                        <ul class="file-list">
-                `;
-
-                folder.files.forEach((file) => {
-                    const safeFileId = encodeURIComponent(file.name);
-                    const isAuthRequired = file.auth_required === true;
-                    
-                    html += `
-                        <li class="file-item" id="file-${safeFolderId}-${safeFileId}">
-                            <div class="file-info">
-                                <div class="file-title-row">
-                                    <span class="file-name">📄 ${escapeHTML(file.name)}</span>
-                                    ${isAuthRequired ? `<span class="auth-badge" title="Authorization required">🔐 Auth Required</span>` : ''}
-                                </div>
-                                ${file.description ? `<p class="file-description-text">${escapeHTML(file.description)}</p>` : ''}
-                            </div>
-                            <a href="${escapeHTML(file.href)}" target="_blank" rel="noopener noreferrer" class="btn ${isAuthRequired ? 'btn-accent' : ''}">
-                                View File <span class="sr-only">named ${escapeHTML(file.name)} in new window</span>
-                            </a>
-                        </li>
-                    `;
-                });
-
-                html += `
-                        </ul>
-                    </div>
-                `;
-            });
-
-            container.innerHTML = html;
-        }
-
-        // Process query string parameter `doc` or Hash Route `#/doc/`
-        function handleDeepLink() {
-            let targetPath = "";
-
-            // Check query parameter 'doc' first
-            const params = new URLSearchParams(window.location.search);
-            if (params.has('doc')) {
-                targetPath = params.get('doc');
-            } else {
-                // Check hash fragment route structure
-                const hash = window.location.hash;
-                if (hash.startsWith('#/doc/')) {
-                    targetPath = hash.replace('#/doc/', '');
-                }
-            }
-
-            if (!targetPath) return;
-
-            // Separate parent folder and file
-            const parts = targetPath.split('/');
-            const folderQuery = decodeURIComponent(parts[0]);
-            const fileQuery = parts[1] ? decodeURIComponent(parts[1]) : null;
-
-            // Search in loaded model
-            const targetFolder = documentData.find(f => f.name.toLowerCase() === folderQuery.toLowerCase());
-            
-            if (!targetFolder) {
-                showNotification("Document Link Broken", `We could not find a folder matching "${escapeHTML(folderQuery)}" in our directory. Please browse below to locate the file.`, "error");
-                return;
-            }
-
-            const safeFolderId = encodeURIComponent(targetFolder.name);
-
-            if (fileQuery) {
-                const targetFile = targetFolder.files.find(f => f.name.toLowerCase() === fileQuery.toLowerCase());
-                if (!targetFile) {
-                    showNotification("Document Link Broken", `We found the folder "${escapeHTML(targetFolder.name)}", but the file "${escapeHTML(fileQuery)}" does not exist in it.`, "error");
-                    scrollToElement(`folder-${safeFolderId}`);
-                    return;
-                }
-
-                // File and Folder match found successfully!
-                const safeFileId = encodeURIComponent(targetFile.name);
-                const fileElementId = `file-${safeFolderId}-${safeFileId}`;
-                
-                scrollToElement(fileElementId);
-                
-                // Highlight target file card
-                const element = document.getElementById(fileElementId);
-                if (element) {
-                    element.classList.add('highlighted-item');
-                }
-
-                // Fire special helper notification if authenticated access rules apply to the deep-linked file
-                if (targetFile.auth_required) {
-                    showNotification(
-                        "Authorization Notice Required", 
-                        `You are viewing a direct link to "${escapeHTML(targetFile.name)}". Because this document is restricted to active homeowners, you may be prompted to enter your credentials or request access from the Board.`, 
-                        "warning"
-                    );
-                }
-            } else {
-                // If the link just references a folder
-                scrollToElement(`folder-${safeFolderId}`);
-                const element = document.getElementById(`folder-${safeFolderId}`);
-                if (element) {
-                    element.classList.add('highlighted-item');
-                }
-            }
-        }
-
-        // General-purpose dynamic notifications
-        function showNotification(title, message, type = "info") {
-            const box = document.getElementById('notificationBox');
-            const titleEl = document.getElementById('notificationTitle');
-            const msgEl = document.getElementById('notificationMessage');
-
-            titleEl.textContent = title;
-            msgEl.textContent = message;
-
-            // Style configuration mapping
-            if (type === "error" || type === "warning") {
-                box.style.borderLeftColor = 'var(--accent)';
-                titleEl.style.color = 'var(--accent)';
-            } else {
-                box.style.borderLeftColor = 'var(--primary)';
-                titleEl.style.color = 'var(--primary)';
-            }
-
-            box.style.display = "block";
-            scrollToElement('notificationBox');
-        }
-
-        // Clean UI resets
-        function clearSearchAndFilters() {
-            document.getElementById('directorySearch').value = '';
-            // Strip parameters
-            if (window.location.hash || window.location.search) {
-                window.history.pushState("", document.title, window.location.pathname);
-            }
-            document.getElementById('notificationBox').style.display = "none";
-            renderDirectory(documentData);
-        }
-
-        // Check if current cached version from ETag/Last-Modified has been invalidated
-        async function checkForUpdates() {
-            try {
-                // Perform head request to check server status without pulling raw body again
-                const response = await fetch(JSON_PATH, { method: 'HEAD' });
-                const currentVersion = localStorage.getItem(STORAGE_KEY_VERSION);
-                const newVersion = response.headers.get('ETag') || response.headers.get('Last-Modified');
-
-                if (newVersion && currentVersion && newVersion !== currentVersion) {
-                    showNotification(
-                        "Updates Found!", 
-                        "A new version of our HOA document list has been released by the board. Please click 'Reset Directory' or refresh your browser tab to load current files.", 
-                        "info"
-                    );
-                } else {
-                    alert("Your document list is fully up-to-date!");
-                }
-            } catch (error) {
-                console.warn("Unable to check resource version freshness:", error);
-            }
-        }
-
-        // Helper: Scroll target smoothly
-        function scrollToElement(id) {
-            const el = document.getElementById(id);
-            if (el) {
-                setTimeout(() => {
-                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 150);
-            }
-        }
-
-        // Helper: Escaping HTML safely to avoid dynamic template issues
-        function escapeHTML(str) {
-            if (!str) return '';
-            return str.replace(/[&<>'"]/g, 
-                tag => ({
-                    '&': '&amp;',
-                    '<': '&lt;',
-                    '>': '&gt;',
-                    "'": '&#39;',
-                    '"': '&quot;'
-                }[tag] || tag)
-            );
-        }
-    </script>
-</body>
-</html>
+            const query = e.target.value.toLowerCase
