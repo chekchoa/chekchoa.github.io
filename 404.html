@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carriage Hill Estates HOA - Page Not Found (404)</title>
+    <style>
+        :root {
+            /* Monument-Inspired Color Palette */
+            --monument-stone-light: #e3be85;
+            --monument-stone-mid: #cfa365;
+            --monument-stone-dark: #a67c42;
+            --monument-bronze: #26211a;
+            --monument-bronze-shadow: rgba(38, 33, 26, 0.3);
+            
+            /* Standard Layout Variables */
+            --primary: #1a5f7a;
+            --primary-light: #f0f7f9;
+            --secondary: #57c5b6;
+            --dark: #222831;
+            --light: #ffffff;
+            --accent: #e07a5f;
+            --gray: #6c757d;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+            --nav-height: 60px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f8f9fa;
+            padding-top: var(--nav-height);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Top Navigation Bar */
+        .top-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-left .nav-link {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        .nav-toggle-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+            padding: 0.5rem;
+            line-height: 1;
+        }
+
+        /* Monument Textured Header */
+        header {
+            background: linear-gradient(
+                135deg, 
+                var(--monument-stone-light) 0%, 
+                var(--monument-stone-mid) 50%, 
+                var(--monument-stone-dark) 100%
+            );
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--monument-bronze);
+            box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            opacity: 0.15;
+            background-image: radial-gradient(var(--monument-bronze) 1px, transparent 0),
+                              radial-gradient(var(--monument-bronze) 1px, transparent 0);
+            background-size: 8px 8px;
+            background-position: 0 0, 4px 4px;
+            pointer-events: none;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .header-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-container h1 {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-size: 2.8rem;
+            color: var(--monument-bronze);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.4), 
+                         2px 3px 6px var(--monument-bronze-shadow);
+        }
+
+        .header-container p {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.15rem;
+            color: var(--monument-bronze);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.85;
+            max-width: 750px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(38, 33, 26, 0.2);
+            padding-top: 0.75rem;
+        }
+
+        /* Error Content Layout */
+        main {
+            flex: 1;
+            max-width: 750px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+            text-align: center;
+        }
+
+        .error-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 3.5rem 2rem;
+            box-shadow: var(--shadow);
+            border-top: 6px solid var(--accent);
+            position: relative;
+        }
+
+        .error-code {
+            font-size: 6rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+            letter-spacing: -2px;
+        }
+
+        .error-title {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .error-prose {
+            font-size: 1.05rem;
+            color: var(--dark);
+            margin-bottom: 2rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Helpful Routing Action Links */
+        .action-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border: 1px solid #e2edf0;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+            color: var(--light);
+            border-color: var(--primary);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--light);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+        }
+
+        /* Subtle Legal Footnote Trim */
+        .disclaimer-note {
+            margin-top: 2.5rem;
+            font-size: 0.8rem;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: var(--dark);
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mobile Breakpoints */
+        @media (max-width: 768px) {
+            body { padding-top: calc(var(--nav-height) + 10px); }
+            .top-navbar { padding: 0 1rem; }
+            .nav-toggle-btn { display: block; }
+            .nav-right {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0; right: 0;
+                background-color: var(--light);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                padding: 1rem 0;
+                gap: 0;
+                border-top: 1px solid #e2e8f0;
+            }
+            .nav-right.active { display: flex; }
+            .nav-right .nav-link { padding: 0.75rem 1.5rem; width: 100%; box-sizing: border-box; }
+            .nav-right .nav-link:hover { background-color: var(--primary-light); }
+            
+            header { padding: 4rem 1rem 3rem; }
+            .header-container h1 { font-size: 1.8rem; letter-spacing: 1px; }
+            .header-container p { font-size: 0.95rem; }
+            main { margin: 2rem auto; }
+            .error-card { padding: 2.5rem 1.25rem; }
+            .error-code { font-size: 4.5rem; }
+            .action-group .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+        <div class="nav-left">
+            <a href="#" class="nav-link">🏠 Carriage Hill Estates</a>
+        </div>
+        
+        <button type="button" class="nav-toggle-btn" id="navToggle" aria-label="Toggle navigation Menu">☰</button>
+        
+        <div class="nav-right" id="navMenu">
+            <a href="#" class="nav-link">Pool Rules</a>
+            <a href="#" class="nav-link">Court Rules</a>
+            <a href="#" class="nav-link">Documents</a>
+            <a href="#" class="nav-link">Plat Directory</a>
+        </div>
+    </nav>
+
+    <!-- Monument Redesigned Header Component -->
+    <header>
+        <div class="header-container">
+            <h1>Carriage Hill Estates</h1>
+            <p>Community Portal Navigation Terminal</p>
+        </div>
+    </header>
+
+    <!-- Main Content Context Frame -->
+    <main>
+        <div class="error-card">
+            <div class="error-code">404</div>
+            <h2 class="error-title">Lost in the Back Forty?</h2>
+            
+            <p class="error-prose">
+                Like an un-returned neighborly text message or a stray tennis ball over the back fence, the page you are searching for has completely vanished from our boundaries. It may have moved to a new plat, changed names, or is simply hiding out past the pool deck.
+            </p>
+
+            <div class="action-group">
+                <a href="javascript:history.back();" class="btn">⬅️ Go Back One Property</a>
+                <a href="#" class="btn btn-primary">🏡 Return Home Safely</a>
+            </div>
+
+            <p class="disclaimer-note">
+                Note: No structural architectural rules were violated in the loading of this missing asset.
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer Component Layout -->
+    <footer>
+        <p>&copy; 2026 Carriage Hill Estates Homeowners Association. All Rights Reserved.</p>
+        <p style="max-width: 800px; margin: 0 auto; opacity: 0.75; font-size: 0.8rem; line-height: 1.4;">
+            Convenience reference system only. If you believe this file path should exist under active HOA community guidelines, please drop a note to the web subcommittee.
+        </p>
+    </footer>
+
+    <script>
+        // Responsive Menu Toggle Code
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', (e) => {
+                    navMenu.classList.toggle('active');
+                    navToggle.textContent = navMenu.classList.contains('active') ? '✖' : '☰';
+                    e.stopPropagation();
+                });
+
+                document.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        navToggle.textContent = '☰';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
