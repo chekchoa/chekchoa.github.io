@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carriage Hill Estates HOA - Document Directory</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --primary-light: #f0f7f9;
+            --secondary: #57c5b6;
+            --dark: #222831;
+            --light: #ffffff;
+            --accent: #e07a5f;
+            --gray: #6c757d;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+            --nav-height: 60px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f8f9fa;
+            padding-top: var(--nav-height);
+        }
+
+        /* Top Navigation Bar */
+        .top-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-left .nav-link {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--light);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .header-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header-container p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+            min-height: 60vh;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary);
+            display: inline-block;
+        }
+
+        /* Notice Boxes */
+        .notice-container {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--accent);
+            margin-bottom: 2.5rem;
+            display: none; /* Shown dynamically if deep link target has auth or is missing */
+        }
+
+        .notice-container.info {
+            border-left-color: var(--primary);
+            display: block; /* Shown by default for general instructions */
+        }
+
+        .notice-container h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Search & Control Panel */
+        .control-panel {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-wrapper {
+            position: relative;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.8rem 1rem 0.8rem 2.8rem;
+            font-size: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--secondary);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            font-size: 1.1rem;
+            pointer-events: none;
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border: 1px solid #e2edf0;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+            color: var(--light);
+            border-color: var(--primary);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--light);
+            border-color: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background-color: #c9654b;
+            border-color: #c9654b;
+        }
+
+        /* Directory Folder Structure */
+        .directory-view {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .folder-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid #eef2f3;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .folder-card:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .folder-header {
+            background-color: var(--primary-light);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #eef2f3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .folder-title-area h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .folder-description {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-top: 0.25rem;
+        }
+
+        .file-list {
+            list-style: none;
+        }
+
+        .file-item {
+            padding: 1.2rem 2rem;
+            border-bottom: 1px solid #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            transition: background-color 0.15s ease;
+        }
+
+        .file-item:last-child {
+            border-bottom: none;
+        }
+
+        .file-item:hover {
+            background-color: #fcfdfe;
+        }
+
+        .file-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .file-title-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .file-name {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.05rem;
+        }
+
+        .file-description-text {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Indicators and Badges */
+        .auth-badge {
+            background-color: #fff5f2;
+            color: var(--accent);
+            border: 1px solid #ffdcd3;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .highlighted-item {
+            background-color: #fffbeb !important;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            color: var(--gray);
+        }
+
+        .empty-state h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 5rem;
+            background-color: var(--dark);
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Screen Reader Friendly Utility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            body { padding-top: calc(var(--nav-height) + 10px); }
+            .top-navbar { padding: 0 1rem; }
+            .nav-right { gap: 0.75rem; }
+            header { padding: 3rem 1rem 2rem; }
+            .header-container h1 { font-size: 2rem; }
+            main { margin: 1.5rem auto; }
+            .control-panel { padding: 1rem; flex-direction: column; align-items: stretch; }
+            .filter-controls { justify-content: flex-start; }
+            .folder-header { padding: 1rem 1.25rem; }
+            .file-item { padding: 1rem 1.25rem; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+            .file-item .btn { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+        <div class="nav-left">
+            <a href="#" class="nav-link">🏠 Carriage Hill Estates</a>
+        </div>
+        <div class="nav-right">
+            <a href="#" class="nav-link">Pool Rules</a>
+            <a href="#" class="nav-link">Court Rules</a>
+            <a href="#" class="nav-link">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <h1>Document Directory</h1>
+            <p>Access and download Carriage Hill Estates HOA guidelines, forms, and community archives.</p>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Dynamic Link Notifications (Errors or Auth warning) -->
+        <div class="notice-container" id="notificationBox">
+            <h3 id="notificationTitle">⚠️ Notification</h3>
+            <p id="notificationMessage"></p>
+        </div>
+
+        <!-- General Info Notice -->
+        <div class="notice-container info">
+            <h3 style="color: var(--primary);">📂 Navigating Our Library</h3>
+            <p>Below is our official document archive. If you see an orange <strong>"Auth Required"</strong> badge next to a file, you may need your resident credentials or board-authorized email access to view or download it.</p>
+        </div>
+
+        <!-- Control and Search Panel -->
+        <div class="control-panel">
+            <div class="search-wrapper">
+                <span class="search-icon" aria-hidden="true">🔍</span>
+                <input type="text" id="directorySearch" class="search-input" placeholder="Search files and folders by name..." aria-label="Search documents">
+            </div>
+            <div class="filter-controls">
+                <button type="button" class="btn" onclick="clearSearchAndFilters()">Reset Directory</button>
+                <button type="button" class="btn" onclick="checkForUpdates()">Check For Updates</button>
+            </div>
+        </div>
+
+        <!-- Directory Section -->
+        <h2 class="section-title">Community Folders</h2>
+        <div class="directory-view" id="directoryRoot">
+            <!-- Dynamic loading indicator initially -->
+            <div class="empty-state">
+                <h3>Loading Document Library...</h3>
+                <p>Establishing secure connection to files.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Carriage Hill Estates Homeowners Association. All Rights Reserved.</p>
+        <p>Providing transparent community governance and neighborly support.</p>
+    </footer>
+
+    <script>
+        // Store our directory and version metadata globally
+        let documentData = [];
+        const JSON_PATH = '/documents.json';
+        const STORAGE_KEY_VERSION = 'che_docs_version';
+
+        // Set up Event Listeners on Load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadDocuments();
+            document.getElementById('directorySearch').addEventListener('input', handleSearch);
+        });
+
+        // Fetch directory and process hash route/query parameters
+        async function loadDocuments() {
+            const root = document.getElementById('directoryRoot');
+            try {
+                // Fetch resource and register version headers if available
+                const response = await fetch(JSON_PATH);
+                if (!response.ok) {
+                    throw new Error(`Failed to load: ${response.status} ${response.statusText}`);
+                }
+                
+                // Track resource state for freshness checks
+                const etag = response.headers.get('ETag');
+                const lastModified = response.headers.get('Last-Modified');
+                if (etag || lastModified) {
+                    localStorage.setItem(STORAGE_KEY_VERSION, etag || lastModified);
+                }
+
+                documentData = await response.json();
+                renderDirectory(documentData);
+                
+                // Handle deep linking routes
+                handleDeepLink();
+
+            } catch (error) {
+                console.error(error);
+                root.innerHTML = `
+                    <div class="empty-state" style="border-top: 5px solid var(--accent);">
+                        <h3>Could Not Load Document Directory</h3>
+                        <p>We encountered an error trying to connect to '/documents.json'. Please check your path configuration.</p>
+                        <p style="font-size: 0.85rem; color: var(--gray); margin-top: 1rem;">Details: ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Search mechanism to dynamically match files or folders
+        function handleSearch(e) {
+            const query = e.target.value.toLowerCase().trim();
+            if (!query) {
+                renderDirectory(documentData);
+                return;
+            }
+
+            // Filter model
+            const filtered = documentData.map(folder => {
+                // If folder name or description matches query, keep all its files
+                const folderMatch = folder.name.toLowerCase().includes(query) || 
+                                    (folder.description && folder.description.toLowerCase().includes(query));
+                
+                if (folderMatch) {
+                    return folder;
+                }
+
+                // If folder does not match, filter files by match
+                const matchedFiles = folder.files.filter(file => 
+                    file.name.toLowerCase().includes(query) || 
+                    (file.description && file.description.toLowerCase().includes(query))
+                );
+
+                if (matchedFiles.length > 0) {
+                    return { ...folder, files: matchedFiles };
+                }
+
+                return null;
+            }).filter(item => item !== null);
+
+            renderDirectory(filtered, true);
+        }
+
+        // Render routine
+        function renderDirectory(data, isSearching = false) {
+            const container = document.getElementById('directoryRoot');
+            
+            if (data.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h3>No Documents Found</h3>
+                        <p>${isSearching ? "No files or folders matched your current search parameters." : "No documents are currently available in the directory."}</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            data.forEach((folder, folderIdx) => {
+                const safeFolderId = encodeURIComponent(folder.name);
+                html += `
+                    <div class="folder-card" id="folder-${safeFolderId}">
+                        <div class="folder-header">
+                            <div class="folder-title-area">
+                                <h3>📁 ${escapeHTML(folder.name)}</h3>
+                                ${folder.description ? `<p class="folder-description">${escapeHTML(folder.description)}</p>` : ''}
+                            </div>
+                        </div>
+                        <ul class="file-list">
+                `;
+
+                folder.files.forEach((file) => {
+                    const safeFileId = encodeURIComponent(file.name);
+                    const isAuthRequired = file.auth_required === true;
+                    
+                    html += `
+                        <li class="file-item" id="file-${safeFolderId}-${safeFileId}">
+                            <div class="file-info">
+                                <div class="file-title-row">
+                                    <span class="file-name">📄 ${escapeHTML(file.name)}</span>
+                                    ${isAuthRequired ? `<span class="auth-badge" title="Authorization required">🔐 Auth Required</span>` : ''}
+                                </div>
+                                ${file.description ? `<p class="file-description-text">${escapeHTML(file.description)}</p>` : ''}
+                            </div>
+                            <a href="${escapeHTML(file.href)}" target="_blank" rel="noopener noreferrer" class="btn ${isAuthRequired ? 'btn-accent' : ''}">
+                                View File <span class="sr-only">named ${escapeHTML(file.name)} in new window</span>
+                            </a>
+                        </li>
+                    `;
+                });
+
+                html += `
+                        </ul>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Process query string parameter `doc` or Hash Route `#/doc/`
+        function handleDeepLink() {
+            let targetPath = "";
+
+            // Check query parameter 'doc' first
+            const params = new URLSearchParams(window.location.search);
+            if (params.has('doc')) {
+                targetPath = params.get('doc');
+            } else {
+                // Check hash fragment route structure
+                const hash = window.location.hash;
+                if (hash.startsWith('#/doc/')) {
+                    targetPath = hash.replace('#/doc/', '');
+                }
+            }
+
+            if (!targetPath) return;
+
+            // Separate parent folder and file
+            const parts = targetPath.split('/');
+            const folderQuery = decodeURIComponent(parts[0]);
+            const fileQuery = parts[1] ? decodeURIComponent(parts[1]) : null;
+
+            // Search in loaded model
+            const targetFolder = documentData.find(f => f.name.toLowerCase() === folderQuery.toLowerCase());
+            
+            if (!targetFolder) {
+                showNotification("Document Link Broken", `We could not find a folder matching "${escapeHTML(folderQuery)}" in our directory. Please browse below to locate the file.`, "error");
+                return;
+            }
+
+            const safeFolderId = encodeURIComponent(targetFolder.name);
+
+            if (fileQuery) {
+                const targetFile = targetFolder.files.find(f => f.name.toLowerCase() === fileQuery.toLowerCase());
+                if (!targetFile) {
+                    showNotification("Document Link Broken", `We found the folder "${escapeHTML(targetFolder.name)}", but the file "${escapeHTML(fileQuery)}" does not exist in it.`, "error");
+                    scrollToElement(`folder-${safeFolderId}`);
+                    return;
+                }
+
+                // File and Folder match found successfully!
+                const safeFileId = encodeURIComponent(targetFile.name);
+                const fileElementId = `file-${safeFolderId}-${safeFileId}`;
+                
+                scrollToElement(fileElementId);
+                
+                // Highlight target file card
+                const element = document.getElementById(fileElementId);
+                if (element) {
+                    element.classList.add('highlighted-item');
+                }
+
+                // Fire special helper notification if authenticated access rules apply to the deep-linked file
+                if (targetFile.auth_required) {
+                    showNotification(
+                        "Authorization Notice Required", 
+                        `You are viewing a direct link to "${escapeHTML(targetFile.name)}". Because this document is restricted to active homeowners, you may be prompted to enter your credentials or request access from the Board.`, 
+                        "warning"
+                    );
+                }
+            } else {
+                // If the link just references a folder
+                scrollToElement(`folder-${safeFolderId}`);
+                const element = document.getElementById(`folder-${safeFolderId}`);
+                if (element) {
+                    element.classList.add('highlighted-item');
+                }
+            }
+        }
+
+        // General-purpose dynamic notifications
+        function showNotification(title, message, type = "info") {
+            const box = document.getElementById('notificationBox');
+            const titleEl = document.getElementById('notificationTitle');
+            const msgEl = document.getElementById('notificationMessage');
+
+            titleEl.textContent = title;
+            msgEl.textContent = message;
+
+            // Style configuration mapping
+            if (type === "error" || type === "warning") {
+                box.style.borderLeftColor = 'var(--accent)';
+                titleEl.style.color = 'var(--accent)';
+            } else {
+                box.style.borderLeftColor = 'var(--primary)';
+                titleEl.style.color = 'var(--primary)';
+            }
+
+            box.style.display = "block";
+            scrollToElement('notificationBox');
+        }
+
+        // Clean UI resets
+        function clearSearchAndFilters() {
+            document.getElementById('directorySearch').value = '';
+            // Strip parameters
+            if (window.location.hash || window.location.search) {
+                window.history.pushState("", document.title, window.location.pathname);
+            }
+            document.getElementById('notificationBox').style.display = "none";
+            renderDirectory(documentData);
+        }
+
+        // Check if current cached version from ETag/Last-Modified has been invalidated
+        async function checkForUpdates() {
+            try {
+                // Perform head request to check server status without pulling raw body again
+                const response = await fetch(JSON_PATH, { method: 'HEAD' });
+                const currentVersion = localStorage.getItem(STORAGE_KEY_VERSION);
+                const newVersion = response.headers.get('ETag') || response.headers.get('Last-Modified');
+
+                if (newVersion && currentVersion && newVersion !== currentVersion) {
+                    showNotification(
+                        "Updates Found!", 
+                        "A new version of our HOA document list has been released by the board. Please click 'Reset Directory' or refresh your browser tab to load current files.", 
+                        "info"
+                    );
+                } else {
+                    alert("Your document list is fully up-to-date!");
+                }
+            } catch (error) {
+                console.warn("Unable to check resource version freshness:", error);
+            }
+        }
+
+        // Helper: Scroll target smoothly
+        function scrollToElement(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                setTimeout(() => {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 150);
+            }
+        }
+
+        // Helper: Escaping HTML safely to avoid dynamic template issues
+        function escapeHTML(str) {
+            if (!str) return '';
+            return str.replace(/[&<>'"]/g, 
+                tag => ({
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    "'": '&#39;',
+                    '"': '&quot;'
+                }[tag] || tag)
+            );
+        }
+    </script>
+</body>
+</html>
