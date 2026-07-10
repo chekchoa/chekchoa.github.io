@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carriage Hill Estates HOA - Welcome Home</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --primary-light: #f0f7f9;
+            --secondary: #57c5b6;
+            --dark: #222831;
+            --light: #ffffff;
+            --accent: #e07a5f;
+            --gray: #6c757d;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+            --nav-height: 60px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f8f9fa;
+            padding-top: var(--nav-height);
+        }
+
+        /* Top Navigation Bar */
+        .top-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-left .nav-link {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--light);
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .header-container h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header-container p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary);
+            display: inline-block;
+        }
+
+        /* Introduction / Welcome Notice Box */
+        .welcome-container {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--primary);
+            margin-bottom: 4rem;
+        }
+
+        .welcome-content h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+
+        .welcome-content p {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .welcome-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Grid Layouts for Community & Location Features */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 2.2rem;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .feature-card.accent-border {
+            border-top-color: var(--accent);
+        }
+
+        .feature-card h3 {
+            font-size: 1.35rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-card.accent-border h3 {
+            color: var(--accent);
+        }
+
+        .feature-card p {
+            font-size: 0.98rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            margin-top: auto;
+        }
+
+        .feature-card li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .feature-card li::before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .feature-card.accent-border li::before {
+            color: var(--accent);
+        }
+
+        /* Fast Facts Highlight Banner */
+        .facts-banner {
+            background-color: var(--primary-light);
+            border: 1px solid #e2edf0;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .facts-banner h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .fact-item {
+            padding: 1rem;
+        }
+
+        .fact-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .fact-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 5rem;
+            background-color: var(--dark);
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body { padding-top: calc(var(--nav-height) + 10px); }
+            .top-navbar { padding: 0 1rem; }
+            .nav-right { gap: 0.75rem; }
+            header { padding: 4rem 1rem 3rem; }
+            .header-container h1 { font-size: 2.2rem; }
+            .header-container p { font-size: 1.1rem; }
+            main { margin: 1.5rem auto; }
+            .feature-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .welcome-container { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+        <div class="nav-left">
+            <a href="/" class="nav-link">🏠 Carriage Hill Estates</a>
+        </div>
+        <div class="nav-right">
+           <a href="/pool-rules.html" class="nav-link">🏊‍♂️ Pool</a>
+<a href="/court-rules.html" class="nav-link">🎾 Tennis & Pickleball</a>
+<a href="/contact-us.html" class="nav-link">📡 Contact Us</a>
+<a href="https://carriagehillestates.appfolio.com/" target="_blank" class="nav-link primary">💼 Portal Login</a>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+        <div class="header-container">
+            <h1>Discover Carriage Hill Estates</h1>
+            <p>A vibrant, scenic, and welcoming community nestled in the heart of Kansas City's Northland.</p>
+        </div>
+    </header>
+
+    <main>
+        
+        <!-- Welcome Section -->
+        <div class="welcome-container">
+            <div class="welcome-content">
+                <h2>Welcome to Our Neighborhood</h2>
+                <p>Whether you are a prospective homebuyer exploring the area or a new neighbor settling in, Carriage Hill Estates offers the perfect blend of quiet suburban charm, exceptional shared amenities, and fast accessibility to everything Kansas City has to offer.</p>
+                <p>Maintained proudly by an active, community-focused volunteer Homeowners Association, our neighborhood prioritizes safety, visual appeal, friendly interactions, and long-term property values. We invite you to explore what makes our community a wonderful place to call home.</p>
+            </div>
+        </div>
+
+        <!-- Neighborhood Highlights Grid -->
+        <h2 class="section-title">Community Amenities</h2>
+        <div class="feature-grid">
+            
+            <!-- Shared Amenities Card -->
+            <div class="feature-card">
+                <h3>🏊 Private Community Pool</h3>
+                <p>Our private neighborhood pool serves as the community's central gathering point during warm summer months. Outfitted with excellent shade fixtures and dynamic early workout schedules, it is ideal for neighborhood fun or family relaxation.</p>
+                <ul>
+                    <li>Dedicated adult exercise & lap swimming hours.</li>
+                    <li>Shaded pergola and rentable party spaces.</li>
+                    <li>Secure, keyless electronic gate access system.</li>
+                </ul>
+            </div>
+
+            <!-- Sports Facility Card -->
+            <div class="feature-card">
+                <h3>🎾 Tennis & Pickleball Courts</h3>
+                <p>Stay active just a short stroll from your front door. Our newly updated and meticulously maintained court facilities feature high-performance sports surfaces perfect for standard tennis matches or the growing trend of casual pickleball games.</p>
+                <ul>
+                    <li>Private fenced facility reserved strictly for residents.</li>
+                    <li>Optimized and grip-coated specialized playing surface.</li>
+                    <li>Open daily with family-friendly recreation hours.</li>
+                </ul>
+            </div>
+
+            <!-- Pride of Ownership Card -->
+            <div class="feature-card">
+                <h3>🏡 Well-Maintained Environs</h3>
+                <p>Our volunteer board and dedicated architectural review processes ensure that Carriage Hill Estates consistently showcases pride of ownership. Striking streetscapes, well-groomed grounds, and tidy common areas preserve your investment.</p>
+                <ul>
+                    <li>Collaborative architectural oversight to protect property values.</li>
+                    <li>Vibrant common elements and continuous site care.</li>
+                    <li>Active partnerships with property owners and services.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Fast Facts Highlight Banner -->
+        <div class="facts-banner">
+            <h3>Carriage Hill Estates By The Numbers</h3>
+            <div class="facts-grid">
+                <div class="fact-item">
+                    <span class="fact-number">15 Min</span>
+                    <span class="fact-label">To Downtown KC</span>
+                </div>
+                <div class="fact-item">
+                    <span class="fact-number">Top-Tier</span>
+                    <span class="fact-label">NKC Public Schools</span>
+                </div>
+                <div class="fact-item">
+                    <span class="fact-number">24/7</span>
+                    <span class="fact-label">Facility Security</span>
+                </div>
+                <div class="fact-item">
+                    <span class="fact-number">100%</span>
+                    <span class="fact-label">Volunteer Driven</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Surrounding Area Perks Section -->
+        <h2 class="section-title">The Northland Advantage</h2>
+        <div class="feature-grid">
+            
+            <!-- Location Card -->
+            <div class="feature-card accent-border">
+                <h3>📍 Exceptional KC Connectivity</h3>
+                <p>Located off NE Shady Lane Dr in Kansas City, MO (Zip 64119), our residents enjoy unmatched regional convenience. Avoid long commutes while remaining tucked away safely from high-traffic expressways.</p>
+                <ul>
+                    <li>Quick 15-minute commute to downtown businesses.</li>
+                    <li>Easy interstate access to Kansas City International Airport (MCI).</li>
+                    <li>Minutes away from sprawling shopping options at Zona Rosa and Liberty.</li>
+                </ul>
+            </div>
+
+            <!-- Education Card -->
+            <div class="feature-card accent-border">
+                <h3>🎓 Highly-Rated Public Education</h3>
+                <p>Growing households benefit significantly from placement within the acclaimed North Kansas City School District (NKC Schools), renowned across Missouri for advanced learning, diverse programming, and high graduation rates.</p>
+                <ul>
+                    <li>State-recognized early childhood and career-readiness programs.</li>
+                    <li>Robust options for secondary student athletics and artistic pursuits.</li>
+                    <li>High community-backed investment in school facility modernization.</li>
+                </ul>
+            </div>
+
+            <!-- Recreation Card -->
+            <div class="feature-card accent-border">
+                <h3>🌳 Local Parks & Entertainment</h3>
+                <p>The Northland region features a bounty of outdoor trails, pristine public spaces, family-centric entertainment hubs, and famous culinary institutions, blending suburban space with urban culture.</p>
+                <ul>
+                    <li>Proximity to historic parks, public golf courses, and paved paths.</li>
+                    <li>Short drive to Oceans of Fun and Worlds of Fun theme parks.</li>
+                    <li>Endless dining options showcasing world-class Kansas City BBQ.</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Carriage Hill Estates Homeowners Association. All Rights Reserved.</p>
+        <p>Building a connected, thriving, and peaceful community together.</p>
+    </footer>
+
+</body>
+</html>
