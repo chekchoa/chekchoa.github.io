@@ -4,7 +4,7 @@
     "description" : "folder description 2",
     "files": [
        {"name": "file name 1", "description": "file description 1", "auth_required": true, "href": "/file-name-1.pdf"},
-       {"name": "file name 2", "description": "file description 2", "auth_required": false, "href": "https://www.site.com/something/home.html"},
+       {"name": "file name 2", "description": "file description 2", "auth_required": false, "href": "https://www.site.com/something/home.html"}
      ] 
   },
   {
@@ -12,8 +12,7 @@
     "description" : "folder description 2",
     "files": [
        {"name": "file name 1", "description": "file description 1", "auth_required": true, "href": "file-1.txt"},
-       {"name": "file name 2", "description": "file description 2", "auth_required": false, "href": "http://www.google.com"},
+       {"name": "file name 2", "description": "file description 2", "auth_required": false, "href": "http://www.google.com"}
      ] 
   }
-
 ]
