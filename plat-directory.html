@@ -512,7 +512,7 @@
  <!-- Informational Guideline Notice Container -->
 <div class="notice-container">
     <h3>🗺️ Public Parcel References</h3>
-    <p>Welcome to the community plat reference terminal. Here, members can easily verify parcel records across our 15 sub-plats. County APN entries map directly out to official real-estate spatial mapping grids managed by the Clay County Assessor's division.</p>
+    <p>Welcome to the community plat reference terminal. Here, members can easily verify parcel records across our community. County APN entries map directly out to official real-estate spatial mapping grids managed by the Clay County Assessor's division.</p>
     <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--gray); border-top: 1px solid #eef2f3; padding-top: 0.75rem;">
         <strong>Disclaimer:</strong> This directory is provided for informational convenience only and does not constitute an official legal record or explicit municipal affiliation. The data aggregated here may be inaccurate, outdated, or incomplete. Always cross-reference with official Clay County records for legal or financial validation.
     </p>
@@ -626,7 +626,7 @@
             records.forEach(item => {
                 if(item.platname) uniquePlats.add(item.platname.trim().toUpperCase());
             });
-            document.getElementById('statPlats').textContent = uniquePlats.size || 15;
+            document.getElementById('statPlats').textContent = (uniquePlats.size || 15) + "+";
         }
 
         // Configure system hooks for input filters and autocomplete selection routing
