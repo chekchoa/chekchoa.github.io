@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carriage Hill Estates HOA - Tennis & Pickleball Court Rules</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --primary-light: #f0f7f9;
+            --secondary: #57c5b6;
+            --dark: #222831;
+            --light: #ffffff;
+            --accent: #e07a5f;
+            --gray: #6c757d;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+            --nav-height: 60px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f8f9fa;
+            padding-top: var(--nav-height);
+        }
+
+        /* Top Navigation Bar */
+        .top-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-left .nav-link {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--light);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .header-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header-container p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary);
+            display: inline-block;
+        }
+
+        /* Evening Closing Policy Section */
+        .closing-container {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--accent);
+            margin-bottom: 4rem;
+        }
+
+        .closing-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .closing-text p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .closing-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .assistance-box {
+            background: var(--primary-light);
+            border: 1px dashed var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .assistance-box h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .phone-number {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--dark);
+            margin: 0.5rem 0;
+            text-decoration: none;
+        }
+
+        .phone-number:hover {
+            color: var(--primary);
+        }
+
+        .fence-warning {
+            font-size: 0.85rem;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        /* Hours / Schedule Layout */
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            margin-bottom: 4rem;
+        }
+
+        .hours-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary);
+        }
+
+        .hours-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .hours-card .time {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            background: var(--primary-light);
+            padding: 0.2rem 0.75rem;
+            border-radius: 20px;
+        }
+
+        .hours-card ul {
+            list-style-type: none;
+        }
+
+        .hours-card li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .hours-card li::before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* Information Split Cards Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .info-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary);
+        }
+
+        .info-card.accent-border {
+            border-top-color: var(--accent);
+        }
+
+        .info-card p {
+            margin-bottom: 1rem;
+        }
+
+        .info-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bullet-list {
+            margin-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .bullet-list li {
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        /* Rules Container & Grid */
+        .rules-container {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .rules-category h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #eef2f3;
+            padding-bottom: 0.5rem;
+        }
+
+        .rules-list {
+            list-style: none;
+        }
+
+        .rules-list li {
+            padding: 0.65rem 0 0.65rem 1.75rem;
+            position: relative;
+            border-bottom: 1px solid #f8f9fa;
+            font-size: 0.95rem;
+        }
+
+        .rules-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rules-list li::before {
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .prohibitions li::before { content: "✕"; color: var(--accent); }
+        .preservation li::before { content: "✓"; color: var(--secondary); }
+
+        /* Highlight box for critical rules */
+        .critical-note {
+            background-color: #fff5f2;
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            font-size: 0.9rem;
+            color: #843a24;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 5rem;
+            background-color: var(--dark);
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body { padding-top: calc(var(--nav-height) + 10px); }
+            .top-navbar { padding: 0 1rem; }
+            .nav-right { gap: 0.75rem; }
+            header { padding: 3rem 1rem 2rem; }
+            .header-container h1 { font-size: 2rem; }
+            main { margin: 1.5rem auto; }
+            .info-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .closing-container { padding: 1.5rem; }
+            .closing-content { grid-template-columns: 1fr; gap: 1.5rem; }
+            .rules-container { padding: 1.5rem; }
+            .rules-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-navbar">
+        <div class="nav-left">
+            <a href="#" class="nav-link">🏠 Home</a>
+        </div>
+        <div class="nav-right">
+            <a href="mailto:board@carriagehillestates.com" class="nav-link">Contact Board</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-container">
+            <h1>Carriage Hill Estates HOA</h1>
+            <p>Tennis & Pickleball Court Guidelines & Safety Regulations</p>
+        </div>
+    </header>
+
+    <main>
+        
+        <h2 class="section-title">Evening Closing Policy</h2>
+        <div class="closing-container">
+            <div class="closing-content">
+                <div class="closing-text">
+                    <p>To ensure the security of our community facility, please plan to <strong>exit the courts before our scheduled 9:00 PM closing time</strong>.</p>
+                    <p>Our automated neighborhood access keys deactivate promptly at closing. Gathering your equipment and leaving a few minutes early helps prevent an accidental lock-in within the facility gates.</p>
+                    <p>Please note that remaining inside after hours may lead to a temporary suspension of community facility access privileges, and off-hours gate assistance can involve significant response delays.</p>
+                </div>
+                <div class="assistance-box">
+                    <h4>Need Gate Assistance?</h4>
+                    <p>If you find yourself inadvertently locked in, please call:</p>
+                    <a href="tel:8165147268" class="phone-number">(816) 514-7268</a>
+                    <p class="fence-warning">For your safety, please do not attempt to climb the fence.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Court Schedule & Access</h2>
+        <div class="hours-grid">
+            <div class="hours-card">
+                <h3>Normal Operating Hours</h3>
+                <span class="time">10:00 AM – 9:00 PM</span>
+                <ul>
+                    <li>Open to all registered CHE/HOA members and their accompanied guests.</li>
+                    <li>Courts are strictly reserved for recreational tennis and pickleball play.</li>
+                    <li>Children and guests should be informed of facility policies by the responsible community member to ensure a safe environment for everyone.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card accent-border">
+                <h3 style="color: var(--accent); margin-bottom: 1rem;">⚠️ Important Safety Notice</h3>
+                <p><strong>Play at Your Own Risk:</strong> All residents and guests use the courts strictly at their own risk. The HOA assumes no liability for injuries sustained on the premises.</p>
+                <p><strong>Video Surveillance:</strong> For the safety and security of our neighborhood, the tennis and pickleball facility is under 24/7 unattended video recording surveillance.</p>
+            </div>
+
+            <div class="info-card">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">🔑 Electronic Access Key Tags</h3>
+                <p>Carriage Hill Estates utilizes an electronic key tag system to ensure secure, private access to our sports facilities for members in good standing.</p>
+                <ul class="bullet-list">
+                    <li><strong>Account Status:</strong> Household HOA dues and outstanding balances must be fully paid to maintain access. Key tags are automatically restricted for accounts not in good standing.</li>
+                    <li><strong>Replacement Fee:</strong> If your key tag is lost, misplaced, or requires a replacement, a <strong>$25 fee</strong> applies.</li>
+                    <li><strong>Household Limit:</strong> There is a strict limit of <strong>one active key tag per household</strong>, regardless of the number of residents.</li>
+                    <li><strong>Resolution Time:</strong> Contact the board to restore access or order a replacement. The process typically takes a <strong>few business days</strong> to complete.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title">Court Rules & Guidelines</h2>
+        <div class="rules-container">
+            
+            <div class="critical-note">
+                <strong>Surface Preservation:</strong> The tennis and pickleball courts are a major neighborhood asset. Keeping improper footwear, wheeled equipment, and staining materials off the courts preserves the specialized playing surface and keeps maintenance costs low.
+            </div>
+
+            <div class="rules-grid">
+                
+                <div class="rules-category">
+                    <h4>Surface Prohibitions</h4>
+                    <ul class="rules-list prohibitions">
+                        <li><strong>No Pets Allowed:</strong> Animals are strictly prohibited inside the fenced court area.</li>
+                        <li><strong>No Wheeled Equipment:</strong> Bicycles, scooters, roller skates, inline skates, and rollerblades are not permitted.</li>
+                        <li><strong>No Toys or Motorized Vehicles:</strong> Battery-powered child vehicles are strictly banned from the surface.</li>
+                        <li><strong>No Sidewalk Chalk:</strong> Chalk damages the specialized grip coating and is not allowed.</li>
+                    </ul>
+                </div>
+
+                <div class="rules-category">
+                    <h4>Footwear & Proper Use</h4>
+                    <ul class="rules-list preservation">
+                        <li><strong>Proper Footwear Required:</strong> Please wear white, soft-soled athletic shoes only.</li>
+                        <li><strong>No Hard-Soled Shoes:</strong> Dark, heavy, or hard-soled shoes scratch, mar, and scuff the surface.</li>
+                        <li><strong>Active Players Only:</strong> If you are not actively playing tennis or pickleball, you should not be on the courts.</li>
+                        <li><strong>Guest & Child Supervision:</strong> Members are responsible for ensuring that their children and guests understand and follow these rules.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Carriage Hill Estates Homeowners Association. All Rights Reserved.</p>
+        <p>Thank you for partnering with your neighbors to keep our recreational courts clean, safe, and beautifully maintained!</p>
+    </footer>
+
+</body>
+</html>
