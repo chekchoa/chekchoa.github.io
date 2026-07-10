@@ -1,5 +1,1795 @@
 [
   {
+    "city_pin": "89748",
+    "county_apn": "1470700010270",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 27 BLK 1",
+    "address": "6104 N SPRUCE AVE",
+    "owners": "Klepper Geovana & Patrick"
+  },
+  {
+    "city_pin": "89829",
+    "county_apn": "1470700040070",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 4TH PLAT LT 7 BLK 4",
+    "address": "6026 N ELMWOOD CT",
+    "owners": "Daniels Jason L & Stephanie R"
+  },
+  {
+    "city_pin": "89734",
+    "county_apn": "1470700010130",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 13 BLK 1",
+    "address": "4210 NE 60TH CT",
+    "owners": "Todd Shawn C & Laura H"
+  },
+  {
+    "city_pin": "89737",
+    "county_apn": "1470700010160",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 16 BLK 1",
+    "address": "4222 NE 60TH CT",
+    "owners": "Vega-Gonzalez Rosa P"
+  },
+  {
+    "city_pin": "89744",
+    "county_apn": "1470700010230",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 23 BLK 1",
+    "address": "4225 NE 61ST PL",
+    "owners": "Bryans Christopher & Alicia"
+  },
+  {
+    "city_pin": "89780",
+    "county_apn": "1470700040030",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 2ND PLAT LT 3 BLK 4",
+    "address": "6023 N CYPRESS AVE",
+    "owners": "Lunsford Richard L & Kathryn L"
+  },
+  {
+    "city_pin": "89839",
+    "county_apn": "1470700060040",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLATLT 3 BLK 6",
+    "address": "4901 NE 60TH TER",
+    "owners": "Cabra Iva Inis"
+  },
+  {
+    "city_pin": "89844",
+    "county_apn": "1470700060060",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLAT LT 5 BLK 6 EXC ROW",
+    "address": "4911 NE 60TH TER",
+    "owners": "Bircher Marcella"
+  },
+  {
+    "city_pin": "89749",
+    "county_apn": "1470700010280",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 28 BLK 1",
+    "address": "6108 N SPRUCE AVE",
+    "owners": "Stephens Vini R & Jeremy N Hopson-"
+  },
+  {
+    "city_pin": "89840",
+    "county_apn": "1470700060050",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLAT LT 4 BLK 6",
+    "address": "4907 NE 60TH TER",
+    "owners": "Roulette Cedric"
+  },
+  {
+    "city_pin": "89837",
+    "county_apn": "1470700040210",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLATLT 21 BLK 4",
+    "address": "6020 N CHELSEA AVE",
+    "owners": "Herman Jason A & Amanda K"
+  },
+  {
+    "city_pin": "89778",
+    "county_apn": "1470700040010",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 2ND PLAT LT 1 BLK 4",
+    "address": "6015 N CYPRESS AVE",
+    "owners": "Brueck Dennis J & Debra S"
+  },
+  {
+    "city_pin": "89810",
+    "county_apn": "1470700040100",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 4TH PLAT LT 10 BLK 4",
+    "address": "6014 N ELMWOOD CT",
+    "owners": "Waggener Deborah L"
+  },
+  {
+    "city_pin": "89835",
+    "county_apn": "1470700040190",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLATLT 19 BLK 4",
+    "address": "4709 NE 60TH TER",
+    "owners": "Abraham Semhar"
+  },
+  {
+    "city_pin": "89811",
+    "county_apn": "1470700040110",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 4TH PLAT LT 11 BLK 4",
+    "address": "6011 N ELMWOOD CT",
+    "owners": "Moore Matthew & Jill A"
+  },
+  {
+    "city_pin": "89746",
+    "county_apn": "1470700010250",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 25 BLK 1",
+    "address": "4220 NE 61ST PL",
+    "owners": "Lanham Tory L & Angel L"
+  },
+  {
+    "city_pin": "89826",
+    "county_apn": "1470700040130",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 4TH PLATLT 13 BLK 4",
+    "address": "6019 N ELMWOOD CT",
+    "owners": "Woollums Russell W Jr"
+  },
+  {
+    "city_pin": "89831",
+    "county_apn": "1470700040150",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLAT LT 15 BLK 4",
+    "address": "4607 NE 60TH TER",
+    "owners": "Mormino Eugene & Victoria L"
+  },
+  {
+    "city_pin": "89736",
+    "county_apn": "1470700010150",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 15 BLK 1",
+    "address": "4218 NE 60TH CT",
+    "owners": "Presko Robert A & Julie A"
+  },
+  {
+    "city_pin": "89827",
+    "county_apn": "1470700040140",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 4TH PLAT LT 14 BLK 4",
+    "address": "6023 N ELMWOOD CT",
+    "owners": "Lee Desiree Lynn"
+  },
+  {
+    "city_pin": "89812",
+    "county_apn": "1470700020050",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 3 BLK 2",
+    "address": "4231 NE 62ND TER",
+    "owners": "Newberry Clay & Emily"
+  },
+  {
+    "city_pin": "89779",
+    "county_apn": "1470700040020",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 2ND PLAT LT 2 BLK 4",
+    "address": "6019 N CYPRESS AVE",
+    "owners": "Smith Darren D & Deana L"
+  },
+  {
+    "city_pin": "89782",
+    "county_apn": "1470700040050",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 2ND PLAT LT 5 BLK 4",
+    "address": "6031 N CYPRESS AVE",
+    "owners": "Morse Joseph Allen & Lori Johnson"
+  },
+  {
+    "city_pin": "89751",
+    "county_apn": "1470700020010",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLATLTS 1 & 2 BLK 2",
+    "address": "4230 NE SHADY LN",
+    "owners": "Carriage Hill Estates Homeowners Assoc Inc"
+  },
+  {
+    "city_pin": "89814",
+    "county_apn": "1470700020060",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT TR A BLK 2 & PT VAC ROW",
+    "address": "6200 N SPRUCE AVE",
+    "owners": "Carriage Hill Estates Homeowners Assoc Inc"
+  },
+  {
+    "city_pin": "89828",
+    "county_apn": "1470700040120",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 4TH PLAT LT 12 BLK 4",
+    "address": "6015 N ELMWOOD CT",
+    "owners": "Leibinger Edward J & Cindy K"
+  },
+  {
+    "city_pin": "89743",
+    "county_apn": "1470700010220",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 22 BLK 1",
+    "address": "6100 N SPRUCE AVE",
+    "owners": "Tinney Sherman D & Mildred"
+  },
+  {
+    "city_pin": "89730",
+    "county_apn": "1470700010090",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 9 BLK 1",
+    "address": "4213 NE 60TH CT",
+    "owners": "Meythaler Jeremy"
+  },
+  {
+    "city_pin": "89724",
+    "county_apn": "1470700010030",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLATLT 3 BLK 1",
+    "address": "6024 N SPRUCE AVE",
+    "owners": "Sellaro Frank L & Mary"
+  },
+  {
+    "city_pin": "89725",
+    "county_apn": "1470700010040",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 4 BLK 1",
+    "address": "4233 NE 60TH CT",
+    "owners": "Krueger Cassandra June"
+  },
+  {
+    "city_pin": "89728",
+    "county_apn": "1470700010070",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 7 BLK 1",
+    "address": "4221 NE 60TH CT",
+    "owners": "Anzalone Vincent A & Deborah M"
+  },
+  {
+    "city_pin": "89731",
+    "county_apn": "1470700010100",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 10 BLK 1",
+    "address": "4209 NE 60TH CT",
+    "owners": "Gorman William Charles & Alexsandra N"
+  },
+  {
+    "city_pin": "89732",
+    "county_apn": "1470700010110",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 11 BLK 1",
+    "address": "4205 NE 60TH CT",
+    "owners": "Anyanike Tisha & Patrick"
+  },
+  {
+    "city_pin": "89741",
+    "county_apn": "1470700010200",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 20 BLK 1",
+    "address": "6036 N SPRUCE AVE",
+    "owners": "Calow Marion Stanley"
+  },
+  {
+    "city_pin": "89813",
+    "county_apn": "1470700020040",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 4 BLK 2",
+    "address": "4227 NE 62ND TER",
+    "owners": "Smith Kristen"
+  },
+  {
+    "city_pin": "89727",
+    "county_apn": "1470700010060",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLATLT 6 BLK 1",
+    "address": "4225 NE 60TH CT",
+    "owners": "Lane G Grandin & Sandra C"
+  },
+  {
+    "city_pin": "89733",
+    "county_apn": "1470700010120",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 12 BLK 1",
+    "address": "4206 NE 60TH CT",
+    "owners": "Monson W Victor & Kathryn J"
+  },
+  {
+    "city_pin": "89747",
+    "county_apn": "1470700010260",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 26 BLK 1",
+    "address": "4224 NE 61ST PL",
+    "owners": "McGurn James K & Tammy R"
+  },
+  {
+    "city_pin": "89742",
+    "county_apn": "1470700010210",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 21 BLK 1",
+    "address": "6040 N SPRUCE AVE",
+    "owners": "Doyle Perry & Ernestine M"
+  },
+  {
+    "city_pin": "89781",
+    "county_apn": "1470700040040",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 2ND PLAT LT 4 BLK 4",
+    "address": "6027 N CYPRESS AVE",
+    "owners": "Life Unlimited Inc"
+  },
+  {
+    "city_pin": "89783",
+    "county_apn": "1470700040060",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 2ND PLAT LT 6 BLK 4",
+    "address": "6035 N CYPRESS AVE",
+    "owners": "Brown Joshua & Christina"
+  },
+  {
+    "city_pin": "89739",
+    "county_apn": "1470700010180",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 18 BLK 1",
+    "address": "6028 N SPRUCE AVE",
+    "owners": "Halbleib Robert"
+  },
+  {
+    "city_pin": "89834",
+    "county_apn": "1470700040180",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLATLT 18 BLK 4",
+    "address": "4705 NE 60TH TER",
+    "owners": "Grigg Rick A"
+  },
+  {
+    "city_pin": "89726",
+    "county_apn": "1470700010050",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 5 BLK 1",
+    "address": "4229 NE 60TH CT",
+    "owners": "Brown Shelby A & Victoria E"
+  },
+  {
+    "city_pin": "89832",
+    "county_apn": "1470700040160",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLAT LT 16 BLK 4",
+    "address": "4611 NE 60TH TER",
+    "owners": "Powell Scott & Jan"
+  },
+  {
+    "city_pin": "89830",
+    "county_apn": "1470700040080",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 4TH PLAT LT 8 BLK 4",
+    "address": "6022 N ELMWOOD CT",
+    "owners": "Caime Pasquale & Rosie J"
+  },
+  {
+    "city_pin": "89833",
+    "county_apn": "1470700040170",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLATLT 17 BLK 4",
+    "address": "4701 NE 60TH TER",
+    "owners": "Omer Tahani"
+  },
+  {
+    "city_pin": "89836",
+    "county_apn": "1470700040200",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLATLT 20 BLK 4",
+    "address": "6022 N CHELSEA AVE",
+    "owners": "Riddle James P & Alayne R"
+  },
+  {
+    "city_pin": "89729",
+    "county_apn": "1470700010080",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 8 BLK 1",
+    "address": "4217 NE 60TH CT",
+    "owners": "Bingham Robert W & Kathryn R"
+  },
+  {
+    "city_pin": "89722",
+    "county_apn": "1470700010010",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 1 BLK 1",
+    "address": "6016 N SPRUCE AVE",
+    "owners": "Abbott Valerie A"
+  },
+  {
+    "city_pin": "89750",
+    "county_apn": "1470700010290",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 29 BLK 1",
+    "address": "4225 NE SHADY LN",
+    "owners": "Otto Phillip E & Anita M"
+  },
+  {
+    "city_pin": "89738",
+    "county_apn": "1470700010170",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 17 BLK 1",
+    "address": "4226 NE 60TH CT",
+    "owners": "Miller Benjiman F"
+  },
+  {
+    "city_pin": "89745",
+    "county_apn": "1470700010240",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 24 BLK 1",
+    "address": "4221 NE 61ST PL",
+    "owners": "Cheadle Rodney W"
+  },
+  {
+    "city_pin": "89809",
+    "county_apn": "1470700040090",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 4TH PLAT LT 9 BLK 4",
+    "address": "6018 N ELMWOOD CT",
+    "owners": "Malik Rajiv & Sandra M"
+  },
+  {
+    "city_pin": "89723",
+    "county_apn": "1470700010020",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLATLT 2 BLK 1",
+    "address": "6020 N SPRUCE AVE",
+    "owners": "Vu Don Huu & Yen-Ngoc Thi Tran"
+  },
+  {
+    "city_pin": "89841",
+    "county_apn": "1470700060020",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLATLT 1 BLK 6",
+    "address": "6017 N CHELSEA AVE",
+    "owners": "Nichols Howard Norman III"
+  },
+  {
+    "city_pin": "89740",
+    "county_apn": "1470700010190",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 19 BLK 1",
+    "address": "6032 N SPRUCE AVE",
+    "owners": "Callaway Jason L"
+  },
+  {
+    "city_pin": "89735",
+    "county_apn": "1470700010140",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 14 BLK 1",
+    "address": "4214 NE 60TH CT",
+    "owners": "Johnston Melissa & Steven"
+  },
+  {
+    "city_pin": "89838",
+    "county_apn": "1470700060030",
+    "platname": null,
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLATLT 2 BLK 6",
+    "address": "6021 N CHELSEA AVE",
+    "owners": "Curiale Thomas S & Josephine A"
+  },
+  {
+    "city_pin": "89815",
+    "county_apn": "1470700080010",
+    "platname": null,
+    "lot": "1",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 1 BLK 8",
+    "address": "6201 N SPRUCE AVE",
+    "owners": "Meilink Michael S & Jacqueline R"
+  },
+  {
+    "city_pin": "89819",
+    "county_apn": "1470700050010",
+    "platname": null,
+    "lot": "1",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 2ND PLAT LT 1 BLK 5",
+    "address": "4504 NE 60TH TER",
+    "owners": "Page Daniel & Jordan"
+  },
+  {
+    "city_pin": "89752",
+    "county_apn": "1470700030010",
+    "platname": null,
+    "lot": "1",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 1 BLK 3",
+    "address": "6015 N SPRUCE AVE",
+    "owners": "Heffern Connie A"
+  },
+  {
+    "city_pin": "89697",
+    "county_apn": "1470700070010",
+    "platname": null,
+    "lot": "1",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 1 BLK 7",
+    "address": "4200 NE 62ND TER",
+    "owners": "Davisson Tom"
+  },
+  {
+    "city_pin": "89876",
+    "county_apn": "1470700050450",
+    "platname": null,
+    "lot": "10",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLAT LT 10 BLK 5",
+    "address": "6114 N ELMWOOD CT",
+    "owners": "Pepper Maxwell & Monica"
+  },
+  {
+    "city_pin": "89761",
+    "county_apn": "1470700030100",
+    "platname": null,
+    "lot": "10",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 10 BLK 3",
+    "address": "4309 NE 61ST CT",
+    "owners": "Whistler Chadd & Jennifer"
+  },
+  {
+    "city_pin": "89706",
+    "county_apn": "1470700070100",
+    "platname": null,
+    "lot": "10",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 10 BLK 7",
+    "address": "6312 N SPRUCE AVE",
+    "owners": "Guadagnano Joseph & Shelley"
+  },
+  {
+    "city_pin": "89707",
+    "county_apn": "1470700070110",
+    "platname": null,
+    "lot": "11",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 11 BLK 7",
+    "address": "6320 N SPRUCE AVE",
+    "owners": "Payan Romando Sr"
+  },
+  {
+    "city_pin": "89875",
+    "county_apn": "1470700050440",
+    "platname": null,
+    "lot": "11",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 11 BLK 5",
+    "address": "6110 N ELMWOOD CT",
+    "owners": "Cangelosi Joseph & Mary"
+  },
+  {
+    "city_pin": "89762",
+    "county_apn": "1470700030110",
+    "platname": null,
+    "lot": "11",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 11 BLK 3",
+    "address": "4310 NE 61ST CT",
+    "owners": "Coons David & Cheryl"
+  },
+  {
+    "city_pin": "89708",
+    "county_apn": "1470700070120",
+    "platname": null,
+    "lot": "12",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 12 BLK 7",
+    "address": "6319 N SPRUCE AVE",
+    "owners": "Ronnau Dennis H & Joyce M"
+  },
+  {
+    "city_pin": "89763",
+    "county_apn": "1470700030120",
+    "platname": null,
+    "lot": "12",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLATLT 12 BLK 3",
+    "address": "4308 NE 61ST CT",
+    "owners": "Chancellor Cody & Tonya"
+  },
+  {
+    "city_pin": "89874",
+    "county_apn": "1470700050430",
+    "platname": null,
+    "lot": "12",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 12 BLK 5",
+    "address": "6100 N ELMWOOD CT",
+    "owners": "Anderson Donald L & Carolyn"
+  },
+  {
+    "city_pin": "89709",
+    "county_apn": "1470700070130",
+    "platname": null,
+    "lot": "13",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 13 BLK 7",
+    "address": "6315 N SPRUCE AVE",
+    "owners": "Rodgers Larry Brian & Jillene Kay Graves"
+  },
+  {
+    "city_pin": "89873",
+    "county_apn": "1470700050420",
+    "platname": null,
+    "lot": "13",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 13 BLK 5",
+    "address": "6105 N ELMWOOD CT",
+    "owners": "Desimone Richard A & Carole"
+  },
+  {
+    "city_pin": "89764",
+    "county_apn": "1470700030130",
+    "platname": null,
+    "lot": "13",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 13 BLK 3",
+    "address": "4304 NE 61ST CT",
+    "owners": "Silvio Nicholas C & Jennie Ann"
+  },
+  {
+    "city_pin": "89765",
+    "county_apn": "1470700030140",
+    "platname": null,
+    "lot": "14",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 14 BLK 3",
+    "address": "6101 N SPRUCE AVE",
+    "owners": "Biancavilla Salvatore & Anna Mae"
+  },
+  {
+    "city_pin": "89710",
+    "county_apn": "1470700070140",
+    "platname": null,
+    "lot": "14",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 14 BLK 7",
+    "address": "6309 N SPRUCE AVE",
+    "owners": "Witherspoon Jennifer A"
+  },
+  {
+    "city_pin": "89872",
+    "county_apn": "1470700050410",
+    "platname": null,
+    "lot": "14",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 14 BLK 5",
+    "address": "6109 N ELMWOOD CT",
+    "owners": "Howard Victoria L"
+  },
+  {
+    "city_pin": "89766",
+    "county_apn": "1470700030150",
+    "platname": null,
+    "lot": "15",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 15 BLK 3",
+    "address": "6105 N SPRUCE AVE",
+    "owners": "Jenkins Julie A"
+  },
+  {
+    "city_pin": "89711",
+    "county_apn": "1470700070150",
+    "platname": null,
+    "lot": "15",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 15 BLK 7",
+    "address": "4318 NE 63RD ST",
+    "owners": "Forsythe Tim & Leung Panela"
+  },
+  {
+    "city_pin": "89871",
+    "county_apn": "1470700050400",
+    "platname": null,
+    "lot": "15",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 15 BLK 5",
+    "address": "6115 N ELMWOOD CT",
+    "owners": "Fahrni Erin Rae & Brent"
+  },
+  {
+    "city_pin": "89767",
+    "county_apn": "1470700030160",
+    "platname": null,
+    "lot": "16",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 16 BLK 3",
+    "address": "4301 NE SHADY LN",
+    "owners": "Dimiceli Carl & Jean"
+  },
+  {
+    "city_pin": "89870",
+    "county_apn": "1470700050390",
+    "platname": null,
+    "lot": "16",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLAT LT 16 BLK 5",
+    "address": "6119 N ELMWOOD CT",
+    "owners": "Carroll Dustin & Melissa J"
+  },
+  {
+    "city_pin": "89768",
+    "county_apn": "1470700030170",
+    "platname": null,
+    "lot": "17",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 17 BLK 3",
+    "address": "4305 NE SHADY LN",
+    "owners": "Fiscus Kevyn"
+  },
+  {
+    "city_pin": "89869",
+    "county_apn": "1470700050380",
+    "platname": null,
+    "lot": "17",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 17 BLK 5",
+    "address": "6123 N ELMWOOD CT",
+    "owners": "Tucci Michael J & Kathryn C"
+  },
+  {
+    "city_pin": "89769",
+    "county_apn": "1470700030180",
+    "platname": null,
+    "lot": "18",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 18 BLK 3",
+    "address": "4309 NE SHADY LN",
+    "owners": "Turner Brett & Jennifer"
+  },
+  {
+    "city_pin": "89868",
+    "county_apn": "1470700050370",
+    "platname": null,
+    "lot": "18",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 18 BLK 5",
+    "address": "4701 NE SHADY LN",
+    "owners": "Das Dilip K & Malancha"
+  },
+  {
+    "city_pin": "89867",
+    "county_apn": "1470700050360",
+    "platname": null,
+    "lot": "19",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLAT LT 19 BLK 5",
+    "address": "4705 NE SHADY LN",
+    "owners": "Licausi Jennifer"
+  },
+  {
+    "city_pin": "89770",
+    "county_apn": "1470700030190",
+    "platname": null,
+    "lot": "19",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 19 BLK 3",
+    "address": "4313 NE SHADY LN",
+    "owners": "Kinder Lynn D & Donna J"
+  },
+  {
+    "city_pin": "89816",
+    "county_apn": "1470700080020",
+    "platname": null,
+    "lot": "2",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 2 BLK 8",
+    "address": "6205 N SPRUCE AVE",
+    "owners": "Gruschka Jane R"
+  },
+  {
+    "city_pin": "89753",
+    "county_apn": "1470700030020",
+    "platname": null,
+    "lot": "2",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 2 BLK 3",
+    "address": "4301 NE 60TH CT",
+    "owners": "Bain David C"
+  },
+  {
+    "city_pin": "89784",
+    "county_apn": "1470700050020",
+    "platname": null,
+    "lot": "2",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 2ND PLATLT 2 BLK 5",
+    "address": "6039 N CYPRESS AVE",
+    "owners": "Thrasher Lewis & Pruett Lisa"
+  },
+  {
+    "city_pin": "89698",
+    "county_apn": "1470700070020",
+    "platname": null,
+    "lot": "2",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 2 BLK 7",
+    "address": "4230 NE 62ND TER",
+    "owners": "Cooley Alan Gene & Barbara Sue"
+  },
+  {
+    "city_pin": "89716",
+    "county_apn": "1470700080200",
+    "platname": null,
+    "lot": "20",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 20 BLK 8",
+    "address": "6201 N KENSINGTON CT",
+    "owners": "Diekemper Julia E"
+  },
+  {
+    "city_pin": "89866",
+    "county_apn": "1470700050350",
+    "platname": null,
+    "lot": "20",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 20 BLK 5",
+    "address": "4709 NE SHADY LN",
+    "owners": "Wright Kathy"
+  },
+  {
+    "city_pin": "89771",
+    "county_apn": "1470700030200",
+    "platname": null,
+    "lot": "20",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 20 BLK 3",
+    "address": "4317 NE SHADY LN",
+    "owners": "Lohman Jason D"
+  },
+  {
+    "city_pin": "89865",
+    "county_apn": "1470700050340",
+    "platname": null,
+    "lot": "21",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLAT LT 21 BLK 5",
+    "address": "4715 NE SHADY LN",
+    "owners": "Smith Thomas G"
+  },
+  {
+    "city_pin": "89717",
+    "county_apn": "1470700080210",
+    "platname": null,
+    "lot": "21",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 21 BLK 8",
+    "address": "6205 N KENSINGTON CT",
+    "owners": "Rector Lester L & Kathryn A"
+  },
+  {
+    "city_pin": "89772",
+    "county_apn": "1470700030210",
+    "platname": null,
+    "lot": "21",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 21 BLK 3",
+    "address": "4321 NE SHADY LN",
+    "owners": "Kelce Investments LLC"
+  },
+  {
+    "city_pin": "89773",
+    "county_apn": "1470700030220",
+    "platname": null,
+    "lot": "22",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 2ND PLAT LT 22 BLK 3",
+    "address": "6020 N CYPRESS AVE",
+    "owners": "Scola Joseph M & Dianna M"
+  },
+  {
+    "city_pin": "89864",
+    "county_apn": "1470700050330",
+    "platname": null,
+    "lot": "22",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLAT LT 22 BLK 5",
+    "address": "4801 NE SHADY LN",
+    "owners": "Rinard Michael R II & Kristina L"
+  },
+  {
+    "city_pin": "89718",
+    "county_apn": "1470700080220",
+    "platname": null,
+    "lot": "22",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 22 BLK 8",
+    "address": "6209 N KENSINGTON CT",
+    "owners": "Dawson Benjamin S & Cassandra"
+  },
+  {
+    "city_pin": "89774",
+    "county_apn": "1470700030230",
+    "platname": null,
+    "lot": "23",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 2ND PLAT LT 23 BLK 3",
+    "address": "6024 N CYPRESS AVE",
+    "owners": "Dalton Christopher C & Jennifer L"
+  },
+  {
+    "city_pin": "89863",
+    "county_apn": "1470700050320",
+    "platname": null,
+    "lot": "23",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 23 BLK 5",
+    "address": "6120 N CHELSEA CT",
+    "owners": "NG Steven K & Grace W Baysa"
+  },
+  {
+    "city_pin": "89719",
+    "county_apn": "1470700080230",
+    "platname": null,
+    "lot": "23",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 23 BLK 8",
+    "address": "6210 N KENSINGTON CT",
+    "owners": "Falkner Matthew A & Theresa L"
+  },
+  {
+    "city_pin": "89720",
+    "county_apn": "1470700080240",
+    "platname": null,
+    "lot": "24",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 24 BLK 8",
+    "address": "6208 N KENSINGTON CT",
+    "owners": "Pesek Kent E & Kindle"
+  },
+  {
+    "city_pin": "89775",
+    "county_apn": "1470700030240",
+    "platname": null,
+    "lot": "24",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 2ND PLAT LT 24 BLK 3",
+    "address": "6028 N CYPRESS AVE",
+    "owners": "Dodd Gregory B"
+  },
+  {
+    "city_pin": "89862",
+    "county_apn": "1470700050310",
+    "platname": null,
+    "lot": "24",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 24 BLK 5",
+    "address": "6114 N CHELSEA CT",
+    "owners": "Cunningham Clint J & Tracy T"
+  },
+  {
+    "city_pin": "89721",
+    "county_apn": "1470700080250",
+    "platname": null,
+    "lot": "25",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 25 BLK 8",
+    "address": "6204 N KENSINGTON CT",
+    "owners": "Johnson Michael K & Cynthia A"
+  },
+  {
+    "city_pin": "89776",
+    "county_apn": "1470700030250",
+    "platname": null,
+    "lot": "25",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 2ND PLAT LT 25 BLK 3",
+    "address": "6032 N CYPRESS AVE",
+    "owners": "Delaurenti Kelly Lynn"
+  },
+  {
+    "city_pin": "89861",
+    "county_apn": "1470700050300",
+    "platname": null,
+    "lot": "25",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLAT LT 25 BLK 5",
+    "address": "6108 N CHELSEA CT",
+    "owners": "Dang Paul"
+  },
+  {
+    "city_pin": "89860",
+    "county_apn": "1470700050290",
+    "platname": null,
+    "lot": "26",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 26 BLK 5",
+    "address": "6104 N CHELSEA CT",
+    "owners": "Colvin Michael E"
+  },
+  {
+    "city_pin": "89777",
+    "county_apn": "1470700030260",
+    "platname": null,
+    "lot": "26",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 2ND PLAT LT 26 BLK 3",
+    "address": "6036 N CYPRESS AVE",
+    "owners": "Smith Michael A"
+  },
+  {
+    "city_pin": "89817",
+    "county_apn": "1470700080260",
+    "platname": null,
+    "lot": "26",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 26 BLK 8",
+    "address": "6200 N KENSINGTON CT",
+    "owners": "Barac Pawat"
+  },
+  {
+    "city_pin": "89785",
+    "county_apn": "1470700030270",
+    "platname": null,
+    "lot": "27",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 27 BLK 3",
+    "address": "6100 N CYPRESS AVE",
+    "owners": "Cangelosi Gaspare & Virginia"
+  },
+  {
+    "city_pin": "89859",
+    "county_apn": "1470700050280",
+    "platname": null,
+    "lot": "27",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 27 BLK 5",
+    "address": "6100 N CHELSEA CT",
+    "owners": "Hallberg Shriti"
+  },
+  {
+    "city_pin": "89786",
+    "county_apn": "1470700030280",
+    "platname": null,
+    "lot": "28",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 28 BLK 3",
+    "address": "4411 NE 61ST CT",
+    "owners": "Drake Horace B & Ann M"
+  },
+  {
+    "city_pin": "89858",
+    "county_apn": "1470700050270",
+    "platname": null,
+    "lot": "28",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLAT LT 28 BLK 5",
+    "address": "6105 N CHELSEA CT",
+    "owners": "Teuscher Brett & Amanda"
+  },
+  {
+    "city_pin": "89857",
+    "county_apn": "1470700050260",
+    "platname": null,
+    "lot": "29",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 29 BLK 5",
+    "address": "6109 N CHELSEA CT",
+    "owners": "Haskins Jeffrey & Chaney Celeste"
+  },
+  {
+    "city_pin": "89787",
+    "county_apn": "1470700030290",
+    "platname": null,
+    "lot": "29",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 29 BLK 3",
+    "address": "4407 NE 61ST CT",
+    "owners": "Figg Lucy Dee"
+  },
+  {
+    "city_pin": "89804",
+    "county_apn": "1470700050030",
+    "platname": null,
+    "lot": "3",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLATLT 3 BLK 5",
+    "address": "6101 N CYPRESS AVE",
+    "owners": "Reynolds Steven Marcus"
+  },
+  {
+    "city_pin": "89712",
+    "county_apn": "1470700080030",
+    "platname": null,
+    "lot": "3",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 3 BLK 8",
+    "address": "6209 N SPRUCE AVE",
+    "owners": "Schutzman Joseph T & Angela M"
+  },
+  {
+    "city_pin": "89754",
+    "county_apn": "1470700030030",
+    "platname": null,
+    "lot": "3",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 3 BLK 3",
+    "address": "4305 NE 60TH CT",
+    "owners": "Sediqi Hamid"
+  },
+  {
+    "city_pin": "89699",
+    "county_apn": "1470700070030",
+    "platname": null,
+    "lot": "3",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 3 BLK 7",
+    "address": "4234 NE 62ND TER",
+    "owners": "Monsees Richard H Jr & Laura S"
+  },
+  {
+    "city_pin": "89856",
+    "county_apn": "1470700050250",
+    "platname": null,
+    "lot": "30",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 30 BLK 5",
+    "address": "6115 N CHELSEA CT",
+    "owners": "Hall Danny L & Shirley A"
+  },
+  {
+    "city_pin": "89788",
+    "county_apn": "1470700030300",
+    "platname": null,
+    "lot": "30",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 30 BLK 3",
+    "address": "4403 NE 61ST CT",
+    "owners": "Iske S D Allen Jr & Mary M"
+  },
+  {
+    "city_pin": "89789",
+    "county_apn": "1470700030310",
+    "platname": null,
+    "lot": "31",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 31 BLK 3",
+    "address": "4400 NE 61ST CT",
+    "owners": "Sturtridge Sandy D & Theresa E"
+  },
+  {
+    "city_pin": "89855",
+    "county_apn": "1470700050240",
+    "platname": null,
+    "lot": "31",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 31 BLK 5",
+    "address": "6119 N CHELSEA CT",
+    "owners": "Elmughrabi Mohammad"
+  },
+  {
+    "city_pin": "89790",
+    "county_apn": "1470700030320",
+    "platname": null,
+    "lot": "32",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 32 BLK 3",
+    "address": "4404 NE 61ST CT",
+    "owners": "Terranella Raymond & Rose"
+  },
+  {
+    "city_pin": "89854",
+    "county_apn": "1470700050230",
+    "platname": null,
+    "lot": "32",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 32 BLK 5",
+    "address": "6123 N CHELSEA CT",
+    "owners": "Holmes Elizabeth Ann"
+  },
+  {
+    "city_pin": "89845",
+    "county_apn": "1470700050220",
+    "platname": null,
+    "lot": "33",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLATLT 33 BLK 5",
+    "address": "4918 NE 60TH TER",
+    "owners": "Heuszel Chester P & Linda L"
+  },
+  {
+    "city_pin": "89791",
+    "county_apn": "1470700030330",
+    "platname": null,
+    "lot": "33",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 33 BLK 3",
+    "address": "4408 NE 61ST CT",
+    "owners": "Belcher Kipton & Victoria B"
+  },
+  {
+    "city_pin": "89792",
+    "county_apn": "1470700030340",
+    "platname": null,
+    "lot": "34",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 34 BLK 3",
+    "address": "4412 NE 61ST CT",
+    "owners": "Sturges Paul B & Patti R"
+  },
+  {
+    "city_pin": "89846",
+    "county_apn": "1470700050210",
+    "platname": null,
+    "lot": "34",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLATLT 34 BLK 5",
+    "address": "4912 NE 60TH TER",
+    "owners": "Garcia Julie B & John N Jr"
+  },
+  {
+    "city_pin": "89793",
+    "county_apn": "1470700030350",
+    "platname": null,
+    "lot": "35",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLATLT 35 BLK 3",
+    "address": "4416 NE 61ST CT",
+    "owners": "Anderson Trudy M & Jeffrey L"
+  },
+  {
+    "city_pin": "89847",
+    "county_apn": "1470700050200",
+    "platname": null,
+    "lot": "35",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLAT LT 35 BLK 5",
+    "address": "4906 NE 60TH TER",
+    "owners": "Allen James Nathan & Natalie Marie"
+  },
+  {
+    "city_pin": "89794",
+    "county_apn": "1470700030360",
+    "platname": null,
+    "lot": "36",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 36 BLK 3",
+    "address": "6108 N CYPRESS AVE",
+    "owners": "Kelley Cheri D"
+  },
+  {
+    "city_pin": "89848",
+    "county_apn": "1470700050190",
+    "platname": null,
+    "lot": "36",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLATLT 36 BLK 5",
+    "address": "4900 NE 60TH TER",
+    "owners": "Cox Jack K"
+  },
+  {
+    "city_pin": "89849",
+    "county_apn": "1470700050180",
+    "platname": null,
+    "lot": "37",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLAT LT 37 BLK 5",
+    "address": "4812 NE 60TH TER",
+    "owners": "Gannaway Robert F & Janis"
+  },
+  {
+    "city_pin": "89795",
+    "county_apn": "1470700030370",
+    "platname": null,
+    "lot": "37",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLATLT 37 BLK 3",
+    "address": "6112 N CYPRESS AVE",
+    "owners": "Purk John H & Patricia C"
+  },
+  {
+    "city_pin": "89796",
+    "county_apn": "1470700030380",
+    "platname": null,
+    "lot": "38",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 38 BLK 3",
+    "address": "6116 N CYPRESS AVE",
+    "owners": "Franco Anthony J & Jennifer M"
+  },
+  {
+    "city_pin": "89850",
+    "county_apn": "1470700050170",
+    "platname": null,
+    "lot": "38",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLATLT 38 BLK 5",
+    "address": "4800 NE 60TH TER",
+    "owners": "Nunley Ladonna"
+  },
+  {
+    "city_pin": "89851",
+    "county_apn": "1470700050160",
+    "platname": null,
+    "lot": "39",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLATLT 39 BLK 5",
+    "address": "4710 NE 60TH TER",
+    "owners": "Puckett Randall A"
+  },
+  {
+    "city_pin": "89797",
+    "county_apn": "1470700030390",
+    "platname": null,
+    "lot": "39",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 39 BLK 3",
+    "address": "6115 N KENSINGTON CT",
+    "owners": "McCauley Vernon & Kimberly"
+  },
+  {
+    "city_pin": "89713",
+    "county_apn": "1470700080040",
+    "platname": null,
+    "lot": "4",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 4 BLK 8",
+    "address": "6211 N SPRUCE AVE",
+    "owners": "Ward Shane C & Kara J"
+  },
+  {
+    "city_pin": "89700",
+    "county_apn": "1470700070040",
+    "platname": null,
+    "lot": "4",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 4 BLK 7",
+    "address": "6210 N SPRUCE AVE",
+    "owners": "Perkins Alvin E Sr"
+  },
+  {
+    "city_pin": "89755",
+    "county_apn": "1470700030040",
+    "platname": null,
+    "lot": "4",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 4 BLK 3",
+    "address": "4309 NE 60TH CT",
+    "owners": "Kerr Edward L"
+  },
+  {
+    "city_pin": "89805",
+    "county_apn": "1470700050040",
+    "platname": null,
+    "lot": "4",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLATLT 4 BLK 5",
+    "address": "6105 N CYPRESS AVE",
+    "owners": "Brown William C & Stephanie R"
+  },
+  {
+    "city_pin": "89852",
+    "county_apn": "1470700050150",
+    "platname": null,
+    "lot": "40",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLATLT 40 BLK 5",
+    "address": "4700 NE 60TH TER",
+    "owners": "Oatis Maurice & Courtney"
+  },
+  {
+    "city_pin": "89798",
+    "county_apn": "1470700030400",
+    "platname": null,
+    "lot": "40",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 40 BLK 3",
+    "address": "6111 N KENSINGTON CT",
+    "owners": "Pauley Athena Bandy"
+  },
+  {
+    "city_pin": "89853",
+    "county_apn": "1470700050140",
+    "platname": null,
+    "lot": "41",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 5TH PLAT LT 41 BLK 5",
+    "address": "4608 NE 60TH TER",
+    "owners": "Moon Edward A"
+  },
+  {
+    "city_pin": "89799",
+    "county_apn": "1470700030410",
+    "platname": null,
+    "lot": "41",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLATLT 41 BLK 3",
+    "address": "6107 N KENSINGTON CT",
+    "owners": "Gliser Shane M & Delaney B"
+  },
+  {
+    "city_pin": "89800",
+    "county_apn": "1470700030420",
+    "platname": null,
+    "lot": "42",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 42 BLK 3",
+    "address": "6102 N KENSINGTON CT",
+    "owners": "Cole Andrew S"
+  },
+  {
+    "city_pin": "89825",
+    "county_apn": "1470700050130",
+    "platname": null,
+    "lot": "42",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 4TH PLAT LT 42 BLK 5",
+    "address": "6027 N ELMWOOD CT",
+    "owners": "Watson Kathleen & Shawn"
+  },
+  {
+    "city_pin": "89801",
+    "county_apn": "1470700030430",
+    "platname": null,
+    "lot": "43",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 43 BLK 3",
+    "address": "6106 N KENSINGTON CT",
+    "owners": "Pisciotta Louis"
+  },
+  {
+    "city_pin": "89824",
+    "county_apn": "1470700050120",
+    "platname": null,
+    "lot": "43",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 4TH PLATLT 43 BLK 5",
+    "address": "6031 N ELMWOOD CT",
+    "owners": "Wolf Mark F & Marcia A"
+  },
+  {
+    "city_pin": "89802",
+    "county_apn": "1470700030440",
+    "platname": null,
+    "lot": "44",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 44 BLK 3",
+    "address": "6110 N KENSINGTON CT",
+    "owners": "Tsao Po"
+  },
+  {
+    "city_pin": "89823",
+    "county_apn": "1470700050110",
+    "platname": null,
+    "lot": "44",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 4TH PLAT LT 44 BLK 5",
+    "address": "6035 N ELMWOOD CT",
+    "owners": "Slater Adam D"
+  },
+  {
+    "city_pin": "89803",
+    "county_apn": "1470700030450",
+    "platname": null,
+    "lot": "45",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLAT LT 45 BLK 3",
+    "address": "6114 N KENSINGTON CT",
+    "owners": "Dang Van My & Trinh Thi"
+  },
+  {
+    "city_pin": "89822",
+    "county_apn": "1470700050100",
+    "platname": null,
+    "lot": "45",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 4TH PLATLT 45 BLK 5",
+    "address": "6034 N ELMWOOD CT",
+    "owners": "Tricic Kerim"
+  },
+  {
+    "city_pin": "89821",
+    "county_apn": "1470700050090",
+    "platname": null,
+    "lot": "46",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 4TH PLAT LT 46 BLK 5",
+    "address": "6030 N ELMWOOD CT",
+    "owners": "Huff Kallie Mae"
+  },
+  {
+    "city_pin": "89820",
+    "county_apn": "1470700050080",
+    "platname": null,
+    "lot": "47",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 4TH PLATLT 47 BLK 5",
+    "address": "4508 NE 60TH TER",
+    "owners": "Sanders Cheryl Y"
+  },
+  {
+    "city_pin": "89756",
+    "county_apn": "1470700030050",
+    "platname": null,
+    "lot": "5",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 5 BLK 3",
+    "address": "4308 NE 60TH CT",
+    "owners": "Jenkins Robert H & Linda J"
+  },
+  {
+    "city_pin": "89714",
+    "county_apn": "1470700080050",
+    "platname": null,
+    "lot": "5",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 5 BLK 8",
+    "address": "6215 N SPRUCE AVE",
+    "owners": "Dao Toan & Thu Thu Le Bui"
+  },
+  {
+    "city_pin": "89701",
+    "county_apn": "1470700070050",
+    "platname": null,
+    "lot": "5",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 5 BLK 7",
+    "address": "6214 N SPRUCE AVE",
+    "owners": "Scola Frank G"
+  },
+  {
+    "city_pin": "89806",
+    "county_apn": "1470700050050",
+    "platname": null,
+    "lot": "5",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLATLT 5 BLK 5",
+    "address": "6109 N CYPRESS AVE",
+    "owners": "Monachino Christopher Michael"
+  },
+  {
+    "city_pin": "89807",
+    "county_apn": "1470700050060",
+    "platname": null,
+    "lot": "6",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLATLT 6 BLK 5",
+    "address": "6111 N CYPRESS AVE",
+    "owners": "Christensen Christopher & Anna"
+  },
+  {
+    "city_pin": "89715",
+    "county_apn": "1470700080060",
+    "platname": null,
+    "lot": "6",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 6 BLK 8",
+    "address": "4319 NE 63RD ST",
+    "owners": "Panarisi Salvatore M & Christine A"
+  },
+  {
+    "city_pin": "89757",
+    "county_apn": "1470700030060",
+    "platname": null,
+    "lot": "6",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 6 BLK 3",
+    "address": "4304 NE 60TH CT",
+    "owners": "Wenzl Mark P"
+  },
+  {
+    "city_pin": "89702",
+    "county_apn": "1470700070060",
+    "platname": null,
+    "lot": "6",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 6 BLK 7",
+    "address": "6222 N SPRUCE AVE",
+    "owners": "Scola James L & Robin L"
+  },
+  {
+    "city_pin": "89703",
+    "county_apn": "1470700070070",
+    "platname": null,
+    "lot": "7",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 7 BLK 7",
+    "address": "6302 N SPRUCE AVE",
+    "owners": "Deatley Carlisle D & Anh Bui"
+  },
+  {
+    "city_pin": "89808",
+    "county_apn": "1470700050070",
+    "platname": null,
+    "lot": "7",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 3RD PLATLT 7 BLK 5",
+    "address": "4501 NE SHADY LN",
+    "owners": "Buckner Judith E & Myers Sharolynn D Trustees"
+  },
+  {
+    "city_pin": "89758",
+    "county_apn": "1470700030070",
+    "platname": null,
+    "lot": "7",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 7 BLK 3",
+    "address": "6023 N SPRUCE AVE",
+    "owners": "Biancavilla Francesco & Linda"
+  },
+  {
+    "city_pin": "89704",
+    "county_apn": "1470700070080",
+    "platname": null,
+    "lot": "8",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 8 BLK 7",
+    "address": "6304 N SPRUCE AVE",
+    "owners": "Cooper John W"
+  },
+  {
+    "city_pin": "89759",
+    "county_apn": "1470700030080",
+    "platname": null,
+    "lot": "8",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 8 BLK 3",
+    "address": "4301 NE 61ST CT",
+    "owners": "Kelley Michael R & Tara R"
+  },
+  {
+    "city_pin": "89878",
+    "county_apn": "1470700050470",
+    "platname": null,
+    "lot": "8",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLAT LT 8 BLK 5",
+    "address": "6124 N ELMWOOD CT",
+    "owners": "Landers Joseph W Jr & Pamela S"
+  },
+  {
+    "city_pin": "89760",
+    "county_apn": "1470700030090",
+    "platname": null,
+    "lot": "9",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 1ST PLAT LT 9 BLK 3",
+    "address": "4305 NE 61ST CT",
+    "owners": "Hallum Christine T & Brinton"
+  },
+  {
+    "city_pin": "89705",
+    "county_apn": "1470700070090",
+    "platname": null,
+    "lot": "9",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 7TH PLAT LT 9 BLK 7",
+    "address": "6308 N SPRUCE AVE",
+    "owners": "Scola Sam J"
+  },
+  {
+    "city_pin": "89877",
+    "county_apn": "1470700050460",
+    "platname": null,
+    "lot": "9",
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 6TH PLATLT 9 BLK 5",
+    "address": "6120 N ELMWOOD CT",
+    "owners": "Marshall Roy B & Uneeda D"
+  },
+  {
     "city_pin": "224033",
     "county_apn": "1470700060070",
     "platname": "CARRIAGE HILL ESTATES 5TH PLAT",
@@ -1610,16 +3400,6 @@
     "owners": "Carriage Hill Estates Homeowners Assoc Inc"
   },
   {
-    "city_pin": "232695",
-    "county_apn": "1470700130010",
-    "platname": "CARRIAGE HILLS ESTATES-THIRTEENTH PLAT",
-    "lot": null,
-    "block": null,
-    "legal_description": "CARRIAGE HILL ESTATES 13TH PLAT TR A",
-    "address": "6200 N BRIGHTON AVE",
-    "owners": "Peterson Development Co Inc"
-  },
-  {
     "city_pin": "232696",
     "county_apn": "1470700120010",
     "platname": "CARRIAGE HILLS ESTATES-THIRTEENTH PLAT",
@@ -1628,6 +3408,16 @@
     "legal_description": "CARRIAGE HILL ESTATES 13TH PLAT TR B",
     "address": "6150 N BRIGHTON AVE",
     "owners": "Carriage Hill Estates Homeowners Assoc Inc"
+  },
+  {
+    "city_pin": "232695",
+    "county_apn": "1470700130010",
+    "platname": "CARRIAGE HILLS ESTATES-THIRTEENTH PLAT",
+    "lot": null,
+    "block": null,
+    "legal_description": "CARRIAGE HILL ESTATES 13TH PLAT TR A",
+    "address": "6200 N BRIGHTON AVE",
+    "owners": "Peterson Development Co Inc"
   },
   {
     "city_pin": "232671",
