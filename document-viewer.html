@@ -415,11 +415,9 @@
             <a href="#" class="nav-link">🏠 Carriage Hill Estates</a>
         </div>
         <div class="nav-right">
-            <a href="/pool-rules.html" class="nav-link">🏊‍♂️ Pool</a>
-            <a href="/court-rules.html" class="nav-link">🎾 Tennis & Pickleball</a>
-            <a href="/document-viewer.html" class="nav-link">📄 Documents</a>
-            <a href="/contact-us.html" class="nav-link">📡 Contact Us</a>
-            <a href="https://carriagehillestates.appfolio.com/" target="_blank" class="nav-link primary">💼 Portal Login</a>
+            <a href="#" class="nav-link">Pool Rules</a>
+            <a href="#" class="nav-link">Court Rules</a>
+            <a href="#" class="nav-link">Contact Us</a>
         </div>
     </nav>
 
@@ -509,4 +507,234 @@
         }
 
         function handleSearch(e) {
-            const query = e.target.value.toLowerCase
+            const query = e.target.value.toLowerCase().trim();
+            if (!query) {
+                renderDirectory(documentData);
+                return;
+            }
+
+            const filtered = documentData.map(folder => {
+                const folderMatch = folder.name.toLowerCase().includes(query) || 
+                                    (folder.description && folder.description.toLowerCase().includes(query));
+                
+                if (folderMatch) {
+                    return folder;
+                }
+
+                const matchedFiles = folder.files.filter(file => 
+                    file.name.toLowerCase().includes(query) || 
+                    (file.description && file.description.toLowerCase().includes(query))
+                );
+
+                if (matchedFiles.length > 0) {
+                    return { ...folder, files: matchedFiles };
+                }
+
+                return null;
+            }).filter(item => item !== null);
+
+            // Automatically open/expand folders during active search filtering
+            renderDirectory(filtered, true, true);
+        }
+
+        // Modified render function to support collapsible open state attributes
+        function renderDirectory(data, isSearching = false, forceOpen = false) {
+            const container = document.getElementById('directoryRoot');
+            
+            if (data.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h3>No Documents Found</h3>
+                        <p>${isSearching ? "No files or folders matched your current search parameters." : "No documents are currently available in the directory."}</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            data.forEach((folder) => {
+                const safeFolderId = encodeURIComponent(folder.name);
+                // forceOpen dynamically sets the open tag parameter when user searches
+                const openAttribute = forceOpen ? 'open' : '';
+
+                html += `
+                    <details class="folder-card" id="folder-${safeFolderId}" ${openAttribute}>
+                        <summary class="folder-header">
+                            <div class="folder-title-area">
+                                <h3>📁 ${escapeHTML(folder.name)}</h3>
+                                ${folder.description ? `<p class="folder-description">${escapeHTML(folder.description)}</p>` : ''}
+                            </div>
+                            <div class="folder-chevron" aria-hidden="true">▼</div>
+                        </summary>
+                        <ul class="file-list">
+                `;
+
+                folder.files.forEach((file) => {
+                    const safeFileId = encodeURIComponent(file.name);
+                    const isAuthRequired = file.auth_required === true;
+                    
+                    html += `
+                        <li class="file-item" id="file-${safeFolderId}-${safeFileId}">
+                            <div class="file-info">
+                                <div class="file-title-row">
+                                    <span class="file-name">📄 ${escapeHTML(file.name)}</span>
+                                    ${isAuthRequired ? `<span class="auth-badge" title="Authorization required">🔐 Auth Required</span>` : ''}
+                                </div>
+                                ${file.description ? `<p class="file-description-text">${escapeHTML(file.description)}</p>` : ''}
+                            </div>
+                            <a href="${escapeHTML(file.href)}" target="_blank" rel="noopener noreferrer" class="btn ${isAuthRequired ? 'btn-accent' : ''}">
+                                View File <span class="sr-only">named ${escapeHTML(file.name)} in new window</span>
+                            </a>
+                        </li>
+                    `;
+                });
+
+                html += `
+                        </ul>
+                    </details>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function handleDeepLink() {
+            let targetPath = "";
+
+            const params = new URLSearchParams(window.location.search);
+            if (params.has('doc')) {
+                targetPath = params.get('doc');
+            } else {
+                const hash = window.location.hash;
+                if (hash.startsWith('#/doc/')) {
+                    targetPath = hash.replace('#/doc/', '');
+                }
+            }
+
+            if (!targetPath) return;
+
+            const parts = targetPath.split('/');
+            const folderQuery = decodeURIComponent(parts[0]);
+            const fileQuery = parts[1] ? decodeURIComponent(parts[1]) : null;
+
+            const targetFolder = documentData.find(f => f.name.toLowerCase() === folderQuery.toLowerCase());
+            
+            if (!targetFolder) {
+                showNotification("Document Link Broken", `We could not find a folder matching "${escapeHTML(folderQuery)}" in our directory.`, "error");
+                return;
+            }
+
+            const safeFolderId = encodeURIComponent(targetFolder.name);
+            const folderElement = document.getElementById(`folder-${safeFolderId}`);
+            
+            // Programmatically expand the matched folder card for the deep link target
+            if (folderElement) {
+                folderElement.setAttribute('open', '');
+            }
+
+            if (fileQuery) {
+                const targetFile = targetFolder.files.find(f => f.name.toLowerCase() === fileQuery.toLowerCase());
+                if (!targetFile) {
+                    showNotification("Document Link Broken", `We found the folder "${escapeHTML(targetFolder.name)}", but the file "${escapeHTML(fileQuery)}" does not exist.`, "error");
+                    scrollToElement(`folder-${safeFolderId}`);
+                    return;
+                }
+
+                const safeFileId = encodeURIComponent(targetFile.name);
+                const fileElementId = `file-${safeFolderId}-${safeFileId}`;
+                
+                scrollToElement(fileElementId);
+                
+                const element = document.getElementById(fileElementId);
+                if (element) {
+                    element.classList.add('highlighted-item');
+                }
+
+                if (targetFile.auth_required) {
+                    showNotification(
+                        "Authorization Notice Required", 
+                        `You are viewing a direct link to "${escapeHTML(targetFile.name)}". Restricted to active homeowners.`, 
+                        "warning"
+                    );
+                }
+            } else {
+                scrollToElement(`folder-${safeFolderId}`);
+                if (folderElement) {
+                    folderElement.classList.add('highlighted-item');
+                }
+            }
+        }
+
+        function showNotification(title, message, type = "info") {
+            const box = document.getElementById('notificationBox');
+            const titleEl = document.getElementById('notificationTitle');
+            const msgEl = document.getElementById('notificationMessage');
+
+            titleEl.textContent = title;
+            msgEl.textContent = message;
+
+            if (type === "error" || type === "warning") {
+                box.style.borderLeftColor = 'var(--accent)';
+                titleEl.style.color = 'var(--accent)';
+            } else {
+                box.style.borderLeftColor = 'var(--primary)';
+                titleEl.style.color = 'var(--primary)';
+            }
+
+            box.style.display = "block";
+            scrollToElement('notificationBox');
+        }
+
+        function clearSearchAndFilters() {
+            document.getElementById('directorySearch').value = '';
+            if (window.location.hash || window.location.search) {
+                window.history.pushState("", document.title, window.location.pathname);
+            }
+            document.getElementById('notificationBox').style.display = "none";
+            renderDirectory(documentData);
+        }
+
+        async function checkForUpdates() {
+            try {
+                const response = await fetch(JSON_PATH, { method: 'HEAD' });
+                const currentVersion = localStorage.getItem(STORAGE_KEY_VERSION);
+                const newVersion = response.headers.get('ETag') || response.headers.get('Last-Modified');
+
+                if (newVersion && currentVersion && newVersion !== currentVersion) {
+                    showNotification(
+                        "Updates Found!", 
+                        "A new version of our HOA document list has been released by the board. Please refresh to load current files.", 
+                        "info"
+                    );
+                } else {
+                    alert("Your document list is fully up-to-date!");
+                }
+            } catch (error) {
+                console.warn("Unable to check version freshness:", error);
+            }
+        }
+
+        function scrollToElement(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                setTimeout(() => {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 150);
+            }
+        }
+
+        function escapeHTML(str) {
+            if (!str) return '';
+            return str.replace(/[&<>'"]/g, 
+                tag => ({
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    "'": '&#39;',
+                    '"': '&quot;'
+                }[tag] || tag)
+            );
+        }
+    </script>
+</body>
+</html>
