@@ -1,18 +1,23 @@
 [
   {
-    "name" : "folder 1",
-    "description" : "folder description 2",
+    "name" : "CCRs",
+    "description" : "Covenants, Conditions, and Restrictions legal documents recorded with the county that attach to a property deed. ",
     "files": [
-       {"name": "file name 1", "description": "file description 1", "auth_required": true, "href": "/file-name-1.pdf"},
-       {"name": "file name 2", "description": "file description 2", "auth_required": false, "href": "https://www.site.com/something/home.html"}
-     ] 
-  },
-  {
-    "name" : "folder 2",
-    "description" : "folder description 2",
-    "files": [
-       {"name": "file name 1", "description": "file description 1", "auth_required": true, "href": "file-1.txt"},
-       {"name": "file name 2", "description": "file description 2", "auth_required": false, "href": "http://www.google.com"}
+       {"name": "1st Plat", "description": "CCRs that govern properties withint the plat", "auth_required": false, "href": "https://drive.google.com/file/d/1KX7F2VE6RXGxIm7luXPJOkmo23t391-U/view?usp=sharing"},
+       {"name": "2nd Plat", "description": "CCRs that govern properties withint the plat", "auth_required": false, "href": "https://drive.google.com/file/d/1cEwHfTnQEYaIdDddJ5jgvDQa-ad1-YAs/view?usp=sharing"},
+      {"name": "3rd Plat", "description": "CCRs that govern properties withint the plat", "auth_required": false, "href": "https://drive.google.com/file/d/1ME_E3BE1HAjxyFPazSzQfDUItcAnKH7t/view?usp=sharing"},
+       {"name": "4th Plat", "description": "CCRs that govern properties withint the plat", "auth_required": false, "href": "https://drive.google.com/file/d/1OWJDxrNraKCch3gdEQGTzOGArF1LPRWS/view?usp=sharing"},
+
+      {"name": "5th Plat", "description": "CCRs that govern properties withint the plat", "auth_required": false, "href": "https://drive.google.com/file/d/1jc_bNYrSFj6Z1gNclqmJoH0lxEjM_Zza/view?usp=sharing"},
+       {"name": "6th Plat", "description": "CCRs that govern properties withint the plat", "auth_required": false, "href": "https://drive.google.com/file/d/1NQVSXf_PSRM61RZ55FzWrcperC1OHnIp/view?usp=sharing"},
+      {"name": "7th Plat", "description": "CCRs that govern properties withint the plat", "auth_required": false, "href": "https://drive.google.com/file/d/1sVaXR9ZNBNrjjipep8eRKxKc8q0zqb2_/view?usp=sharing"},
+       {"name": "8th Plat", "description": "CCRs that govern properties withint the plat", "auth_required": false, "href": "https://drive.google.com/file/d/1XmXL7t-fmbHjr_9X0nE0aB39refbBFgF/view?usp=sharing"},
+      {"name": "9th Plat", "description": "CCRs that govern properties withint the plat", "auth_required": false, "href": "https://drive.google.com/file/d/1oGzHN_dmrKJNvd9MSfjZgbCuouymeZtH/view?usp=sharing"},
+       {"name": "10th Plat", "description": "CCRs that govern properties withint the plat", "auth_required": false, "href": "https://drive.google.com/file/d/1cnVROC7mBHIO3qhzwHDGWEs818FgkaLR/view?usp=sharing"},
+      {"name": "11th Plat", "description": "CCRs that govern properties withint the plat", "auth_required": false, "href": "https://drive.google.com/file/d/1V7t1Q2U4LuF3RqJ8yz128525aJ-F4fMJ/view?usp=sharing"},
+       {"name": "12th Plat", "description": "CCRs that govern properties withint the plat", "auth_required": false, "href": "https://drive.google.com/file/d/1P6FcV7JVdJ3QoMoQBFUMhYIn0ewQmxj_/view?usp=sharing"},
+      {"name": "13th Plat", "description": "CCRs that govern properties withint the plat", "auth_required": false, "href": "https://drive.google.com/file/d/1KfkRXZo4gxIOvOtSp3r9qKmi2dzjO2h5/view?usp=sharing"},
+       {"name": "Detention Plat", "description": "CCRs that govern properties withint the detention plat", "auth_required": false, "href": "https://drive.google.com/file/d/1DEfDlP5RDxSF1UTMHlWWRZ6cj7ZrmzsT/view?usp=sharing"},
      ] 
   }
 ]
