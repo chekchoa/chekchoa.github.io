@@ -6,16 +6,14 @@
     <title>Carriage Hill Estates HOA - Pool Rules & Safety</title>
     <style>
         :root {
-            /* Missouri Midwestern Heart & Warmth Palette */
-            --primary: #1C3B57;        /* Deep River Blue (Missouri River & Trust) */
-            --primary-light: #F7F5F0;  /* Heartland Cream (Warm, welcoming backdrop) */
-            --secondary: #3D6B50;      /* Rolling Hills Green (Missouri's natural landscapes) */
-            --secondary-light: #EBF2EE;/* Soft Sage Accent */
-            --dark: #2D3134;           /* Solid Charcoal */
+            --primary: #1a5f7a;
+            --primary-light: #f0f7f9;
+            --secondary: #57c5b6;
+            --dark: #222831;
             --light: #ffffff;
-            --accent: #C87A24;         /* Prairie Sunset Gold (Warmth, community, and attention) */
-            --gray: #6C7278;
-            --border-radius: 12px;     /* Smooth modern radius for cards */
+            --accent: #e07a5f;
+            --gray: #6c757d;
+            --border-radius: 12px;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
@@ -29,7 +27,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--dark);
-            background-color: #F2EFE9; /* Warm, earth-toned cream base */
+            background-color: #f8f9fa;
         }
 
         header {
@@ -38,7 +36,18 @@
             padding: 4rem 2rem 3rem;
             text-align: center;
             position: relative;
-            border-bottom: 5px solid var(--accent);
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
         }
 
         .header-container h1 {
@@ -50,10 +59,9 @@
 
         .header-container p {
             font-size: 1.2rem;
-            opacity: 0.95;
+            opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
-            font-weight: 400;
         }
 
         main {
@@ -66,13 +74,40 @@
             font-size: 1.75rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
-            padding-bottom: 0.4rem;
-            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary);
             display: inline-block;
-            font-weight: 700;
         }
 
-        /* Evening Closing Policy Container */
+        /* Split/Grid Section layouts */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .info-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary);
+        }
+
+        .info-card.accent-border {
+            border-top-color: var(--accent);
+        }
+
+        .info-card p {
+            margin-bottom: 1rem;
+        }
+
+        .info-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Evening Closing Policy Section */
         .closing-container {
             background: var(--light);
             border-radius: var(--border-radius);
@@ -92,7 +127,6 @@
         .closing-text p {
             margin-bottom: 1rem;
             font-size: 1.05rem;
-            color: var(--dark);
         }
 
         .closing-text p:last-child {
@@ -101,32 +135,28 @@
 
         .assistance-box {
             background: var(--primary-light);
-            border: 1px solid #E1DCD3;
-            border-top: 4px solid var(--accent);
+            border: 1px dashed var(--accent);
             padding: 1.5rem;
-            border-radius: var(--border-radius);
+            border-radius: 8px;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .assistance-box h4 {
-            color: var(--primary);
+            color: var(--accent);
             margin-bottom: 0.5rem;
-            font-size: 1.15rem;
-            font-weight: 700;
+            font-size: 1.1rem;
         }
 
         .phone-number {
             display: block;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            color: var(--accent);
+            color: var(--dark);
             margin: 0.5rem 0;
             text-decoration: none;
         }
 
         .phone-number:hover {
-            text-decoration: underline;
             color: var(--primary);
         }
 
@@ -158,32 +188,29 @@
         }
 
         .hours-card.maintenance {
-            border-top-color: var(--secondary);
+            border-top-color: var(--accent);
         }
 
         .hours-card h3 {
             font-size: 1.4rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
-            font-weight: 700;
         }
 
         .hours-card .time {
             font-size: 1.25rem;
             font-weight: bold;
-            color: var(--primary);
-            margin-bottom: 1.1rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
             display: inline-block;
             background: var(--primary-light);
-            padding: 0.25rem 0.85rem;
+            padding: 0.2rem 0.75rem;
             border-radius: 20px;
-            border: 1px solid #E1DCD3;
         }
 
         .hours-card.maintenance .time {
-            color: var(--secondary);
-            background: var(--secondary-light);
-            border-color: #D3DDD7;
+            color: var(--accent);
+            background: #fff5f2;
         }
 
         .hours-card ul {
@@ -191,24 +218,27 @@
         }
 
         .hours-card li {
-            margin-bottom: 0.85rem;
+            margin-bottom: 0.75rem;
             position: relative;
             padding-left: 1.5rem;
             font-size: 0.95rem;
-            color: var(--dark);
         }
 
         .hours-card li::before {
-            content: "✓";
+            content: "•";
             color: var(--secondary);
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             position: absolute;
             left: 0;
-            top: -1px;
+            top: -2px;
         }
 
-        /* Rules Container & Grid */
+        .hours-card.maintenance li::before {
+            color: var(--accent);
+        }
+
+        /* Rules Grid */
         .rules-container {
             background: var(--light);
             border-radius: var(--border-radius);
@@ -219,18 +249,17 @@
         .rules-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .rules-category h4 {
             font-size: 1.2rem;
             color: var(--primary);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            border-bottom: 2px solid var(--primary-light);
+            border-bottom: 1px solid #eef2f3;
             padding-bottom: 0.5rem;
-            font-weight: 700;
         }
 
         .rules-list {
@@ -238,9 +267,9 @@
         }
 
         .rules-list li {
-            padding: 0.65rem 0 0.65rem 1.75rem;
+            padding: 0.6rem 0 0.6rem 1.75rem;
             position: relative;
-            border-bottom: 1px solid #F2EFE9;
+            border-bottom: 1px solid #f8f9fa;
             font-size: 0.95rem;
         }
 
@@ -248,49 +277,66 @@
             border-bottom: none;
         }
 
+        /* Custom Bullet Points for Rules */
         .rules-list li::before {
             position: absolute;
             left: 0;
             font-weight: bold;
         }
 
-        .safety li::before { content: "✕"; color: var(--accent); font-size: 1.1rem; top: 4px; }
-        .etiquette li::before { content: "•"; color: var(--primary); font-size: 1.4rem; top: 1px; }
-        .facilities li::before { content: "✓"; color: var(--secondary); font-size: 1.1rem; top: 4px; }
+        .safety li::before { content: "✕"; color: var(--accent); }
+        .etiquette li::before { content: "✓"; color: var(--secondary); }
+        .facilities li::before { content: "⚿"; color: var(--primary); }
 
         /* Highlight box for critical rules */
         .critical-note {
-            background-color: var(--primary-light);
-            border-left: 4px solid var(--primary);
-            padding: 1.2rem;
-            margin-bottom: 2rem;
+            background-color: #fff5f2;
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
             border-radius: 0 var(--border-radius) var(--border-radius) 0;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            color: #843a24;
+        }
+
+        .bullet-list {
+            margin-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .bullet-list li {
+            margin-bottom: 0.25rem;
+        }
+
+        .email-link {
             color: var(--primary);
-            border: 1px solid #E1DCD3;
-            border-left: 4px solid var(--primary);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
         }
 
         footer {
             text-align: center;
-            padding: 3.5rem 1rem;
+            padding: 3rem 1rem;
             margin-top: 5rem;
-            background-color: var(--primary);
-            color: var(--primary-light);
+            background-color: var(--dark);
+            color: #a0aec0;
             font-size: 0.9rem;
-            border-top: 4px solid var(--accent);
         }
 
         footer p {
             margin-bottom: 0.5rem;
-            opacity: 0.9;
         }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
-            header { padding: 3.5rem 1rem 2.5rem; }
+            header { padding: 3rem 1rem 2rem; }
             .header-container h1 { font-size: 2rem; }
             main { margin: 1.5rem auto; }
+            .info-grid { grid-template-columns: 1fr; gap: 1.5rem; }
             .closing-container { padding: 1.5rem; }
             .closing-content { grid-template-columns: 1fr; gap: 1.5rem; }
             .rules-container { padding: 1.5rem; }
@@ -313,7 +359,7 @@
         <div class="closing-container">
             <div class="closing-content">
                 <div class="closing-text">
-                    <p>To ensure the safety and security of our community facility, please plan to <strong>exit the pool area before our scheduled 9:00 PM closing time</strong>.</p>
+                    <p>To ensure the security of our community facility, please plan to <strong>exit the pool area before our scheduled 9:00 PM closing time</strong>.</p>
                     <p>Our automated neighborhood pool keys deactivate promptly at closing. Gathering your belongings and leaving a few minutes early helps prevent an accidental lock-in within the facility gates.</p>
                     <p>Please note that remaining inside after hours may lead to a temporary suspension of pool access privileges, and off-hours gate assistance can involve significant response delays.</p>
                 </div>
@@ -366,12 +412,34 @@
 
         </div>
 
+        <!-- Safety Warning & Party Info Side-by-Side Grid -->
+        <div class="info-grid">
+            <!-- Lifeguard & Surveillance Notice -->
+            <div class="info-card accent-border">
+                <h3 style="color: var(--accent); margin-bottom: 1rem;">⚠️ Important Safety Notice</h3>
+                <p><strong>No Lifeguard on Duty:</strong> All residents and guests swim strictly at their own risk. Please look out for one another and ensure children are monitored diligently at all times.</p>
+                <p><strong>Video Surveillance:</strong> For the safety and security of our community, the pool facility is under 24/7 unattended video recording.</p>
+            </div>
+
+            <!-- Pool Party Reservations -->
+            <div class="info-card">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">🎉 Pool Party Reservations</h3>
+                <p>Interested in hosting a pool party? Please email the board to check availability and schedule your event. Keep in mind that parties take place during normal operating hours, so the pool will remain open to other community members.</p>
+                <p><strong>Party Guidelines:</strong></p>
+                <ul class="bullet-list">
+                    <li><strong>Fee:</strong> $150 charge. Includes setup and reservation of two large rectangular tables with tablecloths under the pergola.</li>
+                    <li><strong>Limits:</strong> Maximum of 15 guests and a strict 2-hour time limit.</li>
+                    <li><strong>Responsibility:</strong> All pool rules apply to partygoers. Members are fully responsible for their guests and for ensuring a safe environment.</li>
+                </ul>
+            </div>
+        </div>
+
         <!-- Rules Section -->
         <h2 class="section-title">Pool Rules & Guidelines</h2>
         <div class="rules-container">
             
             <div class="critical-note">
-                <strong>A Safe Community Environment:</strong> The Carriage Hill Estates pool is a shared amenity for all our neighbors. Please review our safety and facility rules below to ensure an enjoyable, neighborly, and secure experience for everyone.
+                <strong>Safety First:</strong> The Carriage Hill Estates pool is a private community amenity. Please review the safety and facility rules below to ensure a fun, safe, and clean environment for all families.
             </div>
 
             <div class="rules-grid">
@@ -421,7 +489,7 @@
 
     <footer>
         <p>&copy; 2026 Carriage Hill Estates Homeowners Association. All Rights Reserved.</p>
-        <p>Thank you for partnering with your neighbors to keep our pool safe, clean, and welcoming!</p>
+        <p>Thank you for doing your part to keep our neighborhood pool safe, clean, and enjoyable!</p>
     </footer>
 
 </body>
