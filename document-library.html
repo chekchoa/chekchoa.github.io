@@ -524,7 +524,7 @@
 
     <script>
         let documentData = [];
-        const JSON_PATH = '/documents.json';
+        const JSON_PATH = '/data/documents-data.json';
         const STORAGE_KEY_VERSION = 'che_docs_version';
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -577,7 +577,7 @@
                 root.innerHTML = `
                     <div class="empty-state" style="border-top: 5px solid var(--accent);">
                         <h3>Could Not Load Document Directory</h3>
-                        <p>We encountered an error trying to connect to '/documents.json'. Please check your path configuration.</p>
+                        <p>We encountered an error trying to connect to '/data/document-data.json'. Please check your path configuration.</p>
                         <p style="font-size: 0.85rem; color: var(--gray); margin-top: 1rem;">Details: ${error.message}</p>
                     </div>
                 `;
