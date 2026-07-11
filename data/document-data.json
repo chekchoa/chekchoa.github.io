@@ -112,5 +112,17 @@
         "href": "https://drive.google.com/file/d/1WY0dsD6DK8OZ2tmg44BvHGhz-7hWyWdo/view?usp=sharing"
       }
     ]
+  },
+  {
+    "name": "Newsletters",
+    "description": "Carriage Hill Estates community newsletters",
+    "files": [
+      {
+        "name": "2026 Winter/Spring",
+        "description": "CHE community newsletter 2026 Winter/Spring",
+        "auth_required": false,
+        "href": "/newsletters/2026-winter-spring-newsletter.pdf"
+      }
+    ]
   }
 ]
