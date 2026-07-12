@@ -3,11 +3,23 @@
     "images": [
         {
             "caption": "",
-            "href": "/data/gallery/image3.png",
+            "href": "/data/gallery/entrance-1.jpg",
         },
 		{
             "caption": "",
-            "href": "/data/gallery/image2.png",
+            "href": "/data/gallery/entrance-2.png",
+        },
+		{
+            "caption": "",
+            "href": "/data/gallery/open-space-1.jpg",
+        },
+		{
+            "caption": "",
+            "href": "/data/gallery/vista-1.jpg",
+        },
+		{
+            "caption": "",
+            "href": "/data/gallery/vista-2.png",
         },
     ]
 }
