@@ -1,0 +1,13 @@
+{
+    "default_interval": 5,
+    "images": [
+        {
+            "caption": "",
+            "href": "/data/gallery/image3.png",
+        },
+		{
+            "caption": "",
+            "href": "/data/gallery/image2.png",
+        },
+    ]
+}
