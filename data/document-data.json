@@ -118,10 +118,34 @@
     "description": "Carriage Hill Estates community newsletters",
     "files": [
       {
-        "name": "2026 Winter/Spring",
-        "description": "CHE community newsletter 2026 Winter/Spring",
+        "name": "Winter/Spring 2026",
+        "description": "CHE community newsletter for Winter/Spring 2026",
         "auth_required": false,
-        "href": "/newsletters/2026-winter-spring-newsletter.pdf"
+        "href": "/data/newsletters/newsletter-winter-spring-2026.pdf"
+      },
+      {
+        "name": "October 2025",
+        "description": "CHE community newsletter for October 2025",
+        "auth_required": false,
+        "href": "/data/newsletters/newsletter-oct-2025.pdf"
+      },
+      {
+        "name": "Back-to-School 2025",
+        "description": "CHE community newsletter for Back-To-School 2025",
+        "auth_required": false,
+        "href": "/data/newsletters/newsletter-backtoschool-2025.pdf"
+      },
+      {
+        "name": "Summer 2025",
+        "description": "CHE community newsletter for Summer 2025",
+        "auth_required": false,
+        "href": "/data/newsletters/newsletter-summer-2025.pdf"
+      },
+      {
+        "name": "Spring 2025",
+        "description": "CHE community newsletter for Spring 2025",
+        "auth_required": false,
+        "href": "/data/newsletters/newsletter-spring-2025.pdf"
       }
     ]
   }
