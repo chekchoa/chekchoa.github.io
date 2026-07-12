@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carriage Hill Estates HOA - Community Gallery</title>
+    <style>
+        :root {
+            /* Monument-Inspired Color Palette */
+            --monument-stone-light: #e3be85;
+            --monument-stone-mid: #cfa365;
+            --monument-stone-dark: #a67c42;
+            --monument-bronze: #26211a;
+            --monument-bronze-shadow: rgba(38, 33, 26, 0.3);
+            
+            /* Standard Layout Variables */
+            --primary: #1a5f7a;
+            --primary-light: #f0f7f9;
+            --secondary: #57c5b6;
+            --dark: #222831;
+            --light: #ffffff;
+            --accent: #e07a5f;
+            --gray: #6c757d;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+            --nav-height: 60px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f8f9fa;
+            padding-top: var(--nav-height);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Top Navigation Bar */
+        .top-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-left .nav-link {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        .nav-toggle-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+            padding: 0.5rem;
+            line-height: 1;
+        }
+
+        /* Monument Textured Header */
+        header {
+            background: linear-gradient(
+                135deg, 
+                var(--monument-stone-light) 0%, 
+                var(--monument-stone-mid) 50%, 
+                var(--monument-stone-dark) 100%
+            );
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--monument-bronze);
+            box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            opacity: 0.15;
+            background-image: radial-gradient(var(--monument-bronze) 1px, transparent 0),
+                              radial-gradient(var(--monument-bronze) 1px, transparent 0);
+            background-size: 8px 8px;
+            background-position: 0 0, 4px 4px;
+            pointer-events: none;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .header-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-container h1 {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-size: 2.8rem;
+            color: var(--monument-bronze);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.4), 
+                         2px 3px 6px var(--monument-bronze-shadow);
+        }
+
+        .header-container p {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.15rem;
+            color: var(--monument-bronze);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.85;
+            max-width: 750px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(38, 33, 26, 0.2);
+            padding-top: 0.75rem;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary);
+            display: inline-block;
+        }
+
+        /* Notifications & Update Alerts */
+        .notice-container {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--primary);
+            margin-bottom: 2.5rem;
+        }
+
+        .notice-container.update-alert {
+            border-left-color: var(--accent);
+            display: none;
+        }
+
+        .notice-container h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Carousel Style Component */
+        .carousel-viewport {
+            position: relative;
+            width: 100%;
+            background-color: var(--dark);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            /* Strict 16:9 Aspect Ratio Rule */
+            aspect-ratio: 16 / 9;
+        }
+
+        .carousel-stage {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Transparent Text Overlay Plate */
+        .slide-caption-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+            color: var(--light);
+            padding: 2.5rem 2rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel-slide.active-slide .slide-caption-bar {
+            opacity: 1;
+        }
+
+        /* Navigation Arrows */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            color: var(--light);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.2s ease;
+            z-index: 10;
+            user-select: none;
+        }
+
+        .carousel-arrow:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: var(--dark);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .arrow-left { left: 1.5rem; }
+        .arrow-right { right: 1.5rem; }
+
+        /* Carousel Indicator Dots */
+        .carousel-controls-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .indicator-dots-group {
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            outline: none;
+        }
+
+        .dot.active {
+            background-color: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* Play / Pause Interactive Utilities */
+        .btn-playback {
+            background-color: var(--light);
+            color: var(--primary);
+            border: 1px solid #e2e8f0;
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-playback:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            color: var(--gray);
+            aspect-ratio: 16 / 9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .empty-state h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: var(--dark);
+            color: #a0aec0;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            body { padding-top: calc(var(--nav-height) + 10px); }
+            .top-navbar { padding: 0 1rem; }
+            .nav-toggle-btn { display: block; }
+            .nav-right {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0; right: 0;
+                background-color: var(--light);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                padding: 1rem 0;
+                border-top: 1px solid #e2e8f0;
+            }
+            .nav-right.active { display: flex; }
+            .nav-right .nav-link { padding: 0.75rem 1.5rem; width: 100%; box-sizing: border-box; }
+            .nav-right .nav-link:hover { background-color: var(--primary-light); }
+            
+            header { padding: 4rem 1rem 3rem; }
+            .header-container h1 { font-size: 1.8rem; letter-spacing: 1px; }
+            .header-container p { font-size: 0.95rem; }
+            main { margin: 1.5rem auto; }
+            .carousel-arrow { width: 40px; height: 40px; font-size: 1rem; }
+            .arrow-left { left: 0.75rem; }
+            .arrow-right { right: 0.75rem; }
+            .slide-caption-bar { padding: 1.5rem 1rem 1rem; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+        <div class="nav-left">
+            <a href="#" class="nav-link">🏠 Carriage Hill Estates</a>
+        </div>
+        
+        <button type="button" class="nav-toggle-btn" id="navToggle" aria-label="Toggle navigation Menu">☰</button>
+        
+        <div class="nav-right" id="navMenu">
+            <a href="#" class="nav-link">Pool Rules</a>
+            <a href="#" class="nav-link">Court Rules</a>
+            <a href="#" class="nav-link">Documents</a>
+            <a href="#" class="nav-link">Plat Directory</a>
+        </div>
+    </nav>
+
+    <!-- Monument Redesigned Header Component -->
+    <header>
+        <div class="header-container">
+            <h1>Carriage Hill Estates</h1>
+            <p>Community Vistas &amp; Scenery Showcase</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Data Sync/Update Alerts -->
+        <div class="notice-container update-alert" id="galleryUpdateAlert">
+            <h3 style="color: var(--accent);">🔄 New Vistas Discovered</h3>
+            <p>The neighborhood image archives have been updated. Please <a href="javascript:window.location.reload();" style="color: var(--accent); font-weight: 700;">refresh the page</a> to stream the newest community layouts.</p>
+        </div>
+
+        <!-- Greeting Guideline Block -->
+        <div class="notice-container">
+            <h3>📸 Neighborhood Vistas</h3>
+            <p>Take a virtual stroll through Carriage Hill Estates. Our collection spotlights the community's signature green landscapes, rolling hillsides, and well-maintained public amenities that make our neighborhood such a welcoming place to live.</p>
+        </div>
+
+        <h2 class="section-title">Gallery Carousel</h2>
+
+        <!-- Interactive Carousel Canvas Frame -->
+        <div id="galleryContainer">
+            <div class="empty-state">
+                <h3>Loading Gallery Frame...</h3>
+                <p>Syncing layout arrays with '/data/gallery-data.json'.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Carriage Hill Estates Homeowners Association. All Rights Reserved.</p>
+        <p style="max-width: 800px; margin: 0 auto; opacity: 0.75; font-size: 0.8rem; line-height: 1.4;">
+            Photographs compiled by community members for residential enjoyment. Submissions of new vistas can be coordinated via the web infrastructure committee.
+        </p>
+    </footer>
+
+    <script>
+        // System State Data Registry
+        let galleryData = { default_interval: 5, images: [] };
+        let activeIndex = 0;
+        let playbackTimer = null;
+        let isAutoPlaying = true;
+        
+        const DATA_URL = '/data/gallery-data.json';
+        const REGISTRY_VERSION_KEY = 'che_gallery_file_version';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeNavbarToggle();
+            fetchGalleryData();
+        });
+
+        // Initialize Native Hamburger Controls
+        function initializeNavbarToggle() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', (e) => {
+                    navMenu.classList.toggle('active');
+                    navToggle.textContent = navMenu.classList.contains('active') ? '✖' : '☰';
+                    e.stopPropagation();
+                });
+
+                document.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        navToggle.textContent = '☰';
+                    }
+                });
+            }
+        }
+
+        // Fetch array configuration records from destination route
+        async function fetchGalleryData() {
+            const container = document.getElementById('galleryContainer');
+            try {
+                const response = await fetch(DATA_URL);
+                if (!response.ok) {
+                    throw new Error(`HTTP network error: ${response.status} ${response.statusText}`);
+                }
+
+                // Cache metadata properties to evaluate file fresh status later
+                const uniqueTag = response.headers.get('ETag') || response.headers.get('Last-Modified');
+                if (uniqueTag) {
+                    localStorage.setItem(REGISTRY_VERSION_KEY, uniqueTag);
+                }
+
+                galleryData = await response.json();
+                
+                if (!galleryData.images || galleryData.images.length === 0) {
+                    throw new Error("The retrieved photo archive metadata array matches empty records.");
+                }
+
+                buildCarouselMarkup();
+                startCarouselAutoplay();
+                setupVersionIntervalMonitor();
+
+            } catch (err) {
+                console.error(err);
+                container.innerHTML = `
+                    <div class="empty-state" style="border-top: 5px solid var(--accent); aspect-ratio: auto; padding: 4rem 2rem;">
+                        <h3>Vistas Canvas Off-line</h3>
+                        <p>We ran into a complication streaming background assets from the repository path.</p>
+                        <p style="font-size:0.85rem; color:var(--gray); margin-top:0.5rem;">Trace Parameters: ${escapeHTML(err.message)}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Generate full semantic HTML carousel structures dynamically
+        function buildCarouselMarkup() {
+            const container = document.getElementById('galleryContainer');
+            
+            let slidesHtml = '';
+            let dotsHtml = '';
+
+            galleryData.images.forEach((img, idx) => {
+                const cleanCaption = img.caption ? img.caption.trim() : "Carriage Hill Estates Vista";
+                const activeClass = idx === 0 ? 'active-slide' : '';
+                
+                slidesHtml += `
+                    <div class="carousel-slide ${activeClass}" id="slide-${idx}">
+                        <img src="${escapeHTML(img.href)}" alt="${escapeHTML(cleanCaption)}" loading="${idx === 0 ? 'eager' : 'lazy'}">
+                        <div class="slide-caption-bar">${escapeHTML(cleanCaption)}</div>
+                    </div>
+                `;
+
+                dotsHtml += `
+                    <button type="button" class="dot ${idx === 0 ? 'active' : ''}" onclick="navigateSlideTo(${idx})" aria-label="Navigate to slide ${idx + 1}"></button>
+                `;
+            });
+
+            container.innerHTML = `
+                <div class="carousel-viewport" id="carouselViewport" aria-roledescription="carousel" aria-label="Community Landscape Gallery">
+                    <button type="button" class="carousel-arrow arrow-left" onclick="stepPreviousSlide()" aria-label="Previous Vista">◀</button>
+                    <button type="button" class="carousel-arrow arrow-right" onclick="stepNextSlide()" aria-label="Next Vista">▶</button>
+                    
+                    <div class="carousel-stage" id="carouselStage">
+                        ${slidesHtml}
+                    </div>
+                </div>
+
+                <div class="carousel-controls-row">
+                    <button type="button" class="btn-playback" id="playbackBtn" onclick="togglePlaybackState()">
+                        <span>⏸</span> Pause Rotation
+                    </button>
+                    <div class="indicator-dots-group">
+                        ${dotsHtml}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Start dynamic automation loops
+        function startCarouselAutoplay() {
+            if (playbackTimer) clearInterval(playbackTimer);
+            
+            // Fallback default value to 5 seconds if interval property evaluates missing or corrupt
+            const rawInterval = parseInt(galleryData.default_interval, 10);
+            const verifiedIntervalMs = (!isNaN(rawInterval) && rawInterval > 0) ? rawInterval * 1000 : 5000;
+
+            playbackTimer = setInterval(() => {
+                if (isAutoPlaying) {
+                    stepNextSlide();
+                }
+            }, verifiedIntervalMs);
+        }
+
+        // Shift view matrix index sequences forward
+        function stepNextSlide() {
+            let nextIndex = activeIndex + 1;
+            if (nextIndex >= galleryData.images.length) {
+                nextIndex = 0;
+            }
+            navigateSlideTo(nextIndex);
+        }
+
+        // Shift view matrix index sequences backward
+        function stepPreviousSlide() {
+            let prevIndex = activeIndex - 1;
+            if (prevIndex < 0) {
+                prevIndex = galleryData.images.length - 1;
+            }
+            navigateSlideTo(prevIndex);
+        }
+
+        // Universal navigation focal point handler
+        function navigateSlideTo(targetIndex) {
+            const stage = document.getElementById('carouselStage');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.dot');
+            
+            if (!stage || slides.length === 0) return;
+
+            activeIndex = targetIndex;
+            
+            // Execute physical slide animation transform transitions
+            stage.style.transform = `translateX(-${activeIndex * 100}%)`;
+
+            // Adjust active CSS flags across slides and tracking indicators
+            slides.forEach((slide, idx) => {
+                if (idx === activeIndex) {
+                    slide.classList.add('active-slide');
+                } else {
+                    slide.classList.remove('active-slide');
+                }
+            });
+
+            dots.forEach((dot, idx) => {
+                if (idx === activeIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // Manage user tracking inputs for play/pause metrics
+        function togglePlaybackState() {
+            const btn = document.getElementById('playbackBtn');
+            isAutoPlaying = !isAutoPlaying;
+
+            if (isAutoPlaying) {
+                btn.innerHTML = `<span>⏸</span> Pause Rotation`;
+                startCarouselAutoplay(); // Reset clock execution alignment parameters
+            } else {
+                btn.innerHTML = `<span>▶</span> Play Rotation`;
+                if (playbackTimer) clearInterval(playbackTimer);
+            }
+        }
+
+        // Monitor background resource freshness signatures
+        async function checkDataFreshness() {
+            try {
+                const headResponse = await fetch(DATA_URL, { method: 'HEAD' });
+                const currentLocalTag = localStorage.getItem(REGISTRY_VERSION_KEY);
+                const cloudTag = headResponse.headers.get('ETag') || headResponse.headers.get('Last-Modified');
+
+                if (cloudTag && currentLocalTag && cloudTag !== currentLocalTag) {
+                    document.getElementById('galleryUpdateAlert').style.display = 'block';
+                }
+            } catch (err) {
+                console.warn("Background cache fresh evaluation bypassed:", err);
+            }
+        }
+
+        function setupVersionIntervalMonitor() {
+            // Verify structural freshness tags silently every 5 minutes
+            setInterval(checkDataFreshness, 300000);
+        }
+
+        function escapeHTML(str) {
+            if (!str) return '';
+            return str.replace(/[&<>'"]/g, 
+                tag => ({
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    "'": '&#39;',
+                    '"': '&quot;'
+                }[tag] || tag)
+            );
+        }
+    </script>
+</body>
+</html>
