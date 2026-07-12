@@ -1,4 +1,40 @@
 [
+    {
+    "name": "Newsletters",
+    "description": "Carriage Hill Estates community newsletters",
+    "files": [
+      {
+        "name": "Winter/Spring 2026",
+        "description": "CHE community newsletter for Winter/Spring 2026",
+        "auth_required": false,
+        "href": "/data/newsletters/newsletter-winter-spring-2026.pdf"
+      },
+      {
+        "name": "October 2025",
+        "description": "CHE community newsletter for October 2025",
+        "auth_required": false,
+        "href": "/data/newsletters/newsletter-oct-2025.pdf"
+      },
+      {
+        "name": "Back-to-School 2025",
+        "description": "CHE community newsletter for Back-To-School 2025",
+        "auth_required": false,
+        "href": "/data/newsletters/newsletter-backtoschool-2025.pdf"
+      },
+      {
+        "name": "Summer 2025",
+        "description": "CHE community newsletter for Summer 2025",
+        "auth_required": false,
+        "href": "/data/newsletters/newsletter-summer-2025.pdf"
+      },
+      {
+        "name": "Spring 2025",
+        "description": "CHE community newsletter for Spring 2025",
+        "auth_required": false,
+        "href": "/data/newsletters/newsletter-spring-2025.pdf"
+      }
+    ]
+  },
   {
     "name": "Governing CCRs",
     "description": "Covenants, Conditions, and Restrictions are legal documents recorded with the county and are attached to a property deed. ",
@@ -110,42 +146,6 @@
         "description": "Resolution and procedures for collection of delinquent payments",
         "auth_required": false,
         "href": "https://drive.google.com/file/d/1WY0dsD6DK8OZ2tmg44BvHGhz-7hWyWdo/view?usp=sharing"
-      }
-    ]
-  },
-  {
-    "name": "Newsletters",
-    "description": "Carriage Hill Estates community newsletters",
-    "files": [
-      {
-        "name": "Winter/Spring 2026",
-        "description": "CHE community newsletter for Winter/Spring 2026",
-        "auth_required": false,
-        "href": "/data/newsletters/newsletter-winter-spring-2026.pdf"
-      },
-      {
-        "name": "October 2025",
-        "description": "CHE community newsletter for October 2025",
-        "auth_required": false,
-        "href": "/data/newsletters/newsletter-oct-2025.pdf"
-      },
-      {
-        "name": "Back-to-School 2025",
-        "description": "CHE community newsletter for Back-To-School 2025",
-        "auth_required": false,
-        "href": "/data/newsletters/newsletter-backtoschool-2025.pdf"
-      },
-      {
-        "name": "Summer 2025",
-        "description": "CHE community newsletter for Summer 2025",
-        "auth_required": false,
-        "href": "/data/newsletters/newsletter-summer-2025.pdf"
-      },
-      {
-        "name": "Spring 2025",
-        "description": "CHE community newsletter for Spring 2025",
-        "auth_required": false,
-        "href": "/data/newsletters/newsletter-spring-2025.pdf"
       }
     ]
   }
